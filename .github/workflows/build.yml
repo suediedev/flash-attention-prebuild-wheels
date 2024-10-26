@@ -51,21 +51,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flash-attn-version: ['2.4.3', '2.5.6', '2.5.9', '2.6.3']
-        python-version: ['3.10', '3.11', '3.12']
-        torch-version: ['2.0.1', '2.1.2', '2.2.2', '2.3.1', '2.4.1', '2.5.0']
-        cuda-version: ['11.8.0', '12.1.1', '12.4.1']
+        flash-attn-version: ["2.4.3", "2.5.6", "2.5.9", "2.6.3"]
+        python-version: ["3.10", "3.11", "3.12"]
+        torch-version: ["2.0.1", "2.1.2", "2.2.2", "2.3.1", "2.4.1", "2.5.0"]
+        cuda-version: ["11.8.0", "12.1.1", "12.4.1"]
         exclude:
           # torch < 2.2 does not support Python 3.12
-          - python-version: '3.12'
-            torch-version: '2.0.1'
-          - python-version: '3.12'
-            torch-version: '2.1.2'
+          - python-version: "3.12"
+            torch-version: "2.0.1"
+          - python-version: "3.12"
+            torch-version: "2.1.2"
           # torch 2.0.1 does not support CUDA 12.x
-          - torch-version: '2.0.1'
-            cuda-version: '12.1.1'
-          - torch-version: '2.0.1'
-            cuda-version: '12.4.1'
+          - torch-version: "2.0.1"
+            cuda-version: "12.1.1"
+          - torch-version: "2.0.1"
+            cuda-version: "12.4.1"
 
     steps:
       - uses: actions/checkout@v4
@@ -95,8 +95,8 @@ jobs:
 
       - name: Set CUDA and PyTorch versions
         run: |
-          echo "MATRIX_CUDA_VERSION=$(echo ${{ matrix.cuda }} | awk -F \. {'print $1 $2'})" >> $GITHUB_ENV
-          echo "MATRIX_TORCH_VERSION=$(echo ${{ matrix.torch }} | awk -F \. {'print $1 "." $2'})" >> $GITHUB_ENV
+          echo "MATRIX_CUDA_VERSION=$(echo ${{ matrix.cuda-version }} | awk -F \. {'print $1 $2'})" >> $GITHUB_ENV
+          echo "MATRIX_TORCH_VERSION=$(echo ${{ matrix.torch-version }} | awk -F \. {'print $1 "." $2'})" >> $GITHUB_ENV
 
       - name: Install PyTorch ${{ matrix.torch-version }}+cu${{ matrix.cuda-version }}
         run: |
@@ -116,7 +116,7 @@ jobs:
               closest_version = min(target_cuda_versions, key=lambda x: abs(x - cuda_version)); \
               print(closest_version) \
           ")
-          pip install --no-cache-dir torch==${{ matrix.torch }} --index-url https://download.pytorch.org/whl/cu${TORCH_CUDA_VERSION}
+          pip install --no-cache-dir torch==${{ matrix.torch-version }} --index-url https://download.pytorch.org/whl/cu${TORCH_CUDA_VERSION}
           nvcc --version
           python -V
           python -c import torch; print("'PyTorch:', torch.__version__)"
