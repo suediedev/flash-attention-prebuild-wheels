@@ -81,7 +81,7 @@ jobs:
       - name: Set Swap Space
         uses: pierotofy/set-swap-space@master
         with:
-          swap-size-gb: 10
+          swap-size-gb: 48
 
       - uses: actions/setup-python@v5
         with:
@@ -134,7 +134,7 @@ jobs:
           pip install setuptools==68.0.0 ninja packaging wheel
           export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
           export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-          export MAX_JOBS=1
+          export MAX_JOBS=2
           cd flash-attention
           FLASH_ATTENTION_FORCE_BUILD="TRUE" python setup.py bdist_wheel --dist-dir=dist
           wheel_name=$(basename $(ls dist/*.whl | head -n 1))
@@ -142,7 +142,7 @@ jobs:
 
       - name: Install Test
         run: |
-          pip install flash_attention/dist/${{ env.wheel_name }}
+          pip install flash-attention/dist/${{ env.wheel_name }}
           python -c "import flash_atten; print(flash_atten.__version__)"
 
       - name: Get the tag version
