@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Get the tag version
         id: extract_branch
-        run: echo ::set-output name=branch::${GITHUB_REF#refs/tags/}
+        run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
         shell: bash
       - name: Create Release
         id: create_release
@@ -134,7 +134,7 @@ jobs:
           pip install setuptools==68.0.0 ninja packaging wheel
           export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
           export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-          export MAX_JOBS=2
+          export MAX_JOBS=3
           cd flash-attention
           FLASH_ATTENTION_FORCE_BUILD="TRUE" python setup.py bdist_wheel --dist-dir=dist
           wheel_name=$(basename $(ls dist/*.whl | head -n 1))
@@ -143,11 +143,11 @@ jobs:
       - name: Install Test
         run: |
           pip install flash-attention/dist/${{ env.wheel_name }}
-          python -c "import flash_atten; print(flash_atten.__version__)"
+          python -c "import flash_attn; print(flash_atten.__version__)"
 
       - name: Get the tag version
         id: extract_branch
-        run: echo ::set-output name=branch::${GITHUB_REF#refs/tags/}
+        run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
       - name: Get Release with Tag
         id: get_release
