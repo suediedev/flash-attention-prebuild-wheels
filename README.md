@@ -25,6 +25,15 @@ flash_attn-[FLASH_ATTN_VERSION]+cu[CUDA_VERSION]torch[TORCH_VERSION]-cp[PYTHON_V
 flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 ```
 
+### v0.0.1
+
+[Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.1)
+
+|flash-attention|Python|PyTorch|CUDA|
+|-|-|-|-|
+|1.0.9, 2.4.3, 2.5.6, 2.5.9, 2.6.3|3.10, 3.11, 3.12|2.0.1, 2.1.2, 2.2.2, 2.3.1, 2.4.1, 2.5.0|11.8.0, 12.1.1, 12.4.1|
+
+
 ### v0.0.0
 
 [Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.0)
@@ -32,3 +41,23 @@ flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 |flash-attention|Python|PyTorch|CUDA|
 |-|-|-|-|
 |2.4.3, 2.5.6, 2.5.9, 2.6.3|3.11, 3.12|2.0.1, 2.1.2, 2.2.2, 2.3.1, 2.4.1, 2.5.0|11.8.0, 12.1.1, 12.4.1|
+
+
+## Original
+
+[repo](https://github.com/Dao-AILab/flash-attention)
+
+```bibtex
+@inproceedings{dao2022flashattention,
+  title={Flash{A}ttention: Fast and Memory-Efficient Exact Attention with {IO}-Awareness},
+  author={Dao, Tri and Fu, Daniel Y. and Ermon, Stefano and Rudra, Atri and R{\'e}, Christopher},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  year={2022}
+}
+@inproceedings{dao2023flashattention2,
+  title={Flash{A}ttention-2: Faster Attention with Better Parallelism and Work Partitioning},
+  author={Dao, Tri},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2024}
+}
+```
