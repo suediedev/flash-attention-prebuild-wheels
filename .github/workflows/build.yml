@@ -25,7 +25,7 @@ jobs:
           body: |
             | Flash-Attention | Python | PyTorch | CUDA |
             |-----------------|--------|---------|------|
-            | 2.4.3, 2.5.6, 2.6.3, 2.7.0.post2 | 3.10, 3.11, 3.12 | 2.0.1, 2.1.2, 2.2.2, 2.3.1, 2.4.1, 2.5.1 | 11.8.0, 12.1.1, 12.4.1 |
+            | 2.7.2.post1 | 3.10, 3.11, 3.12 | 2.0.1, 2.1.2, 2.2.2, 2.3.1, 2.4.1, 2.5.1 | 11.8.0, 12.1.1, 12.4.1 |
 
   build_wheels:
     name: Build wheels and Upload
@@ -34,7 +34,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flash-attn-version: ["2.4.3", "2.5.6", "2.6.3", "2.7.0.post2"]
+        flash-attn-version: ["2.7.2.post1"]
         python-version: ["3.10", "3.11", "3.12"]
         torch-version: ["2.0.1", "2.1.2", "2.2.2", "2.3.1", "2.4.1", "2.5.1"]
         cuda-version: ["11.8.0", "12.1.1", "12.4.1"]
