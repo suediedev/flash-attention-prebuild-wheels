@@ -30,13 +30,14 @@ jobs:
   build_wheels:
     name: Build wheels and Upload
     needs: create_releases
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
         flash-attn-version: ["2.6.3", "2.7.4.post1"]
         python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.0.1", "2.1.2", "2.2.2", "2.3.1", "2.4.1", "2.5.1", "2.6.0"]
+        torch-version:
+          ["2.0.1", "2.1.2", "2.2.2", "2.3.1", "2.4.1", "2.5.1", "2.6.0"]
         cuda-version: ["12.4.1", "12.6.3"]
         exclude:
           # torch < 2.2 does not support Python 3.12
