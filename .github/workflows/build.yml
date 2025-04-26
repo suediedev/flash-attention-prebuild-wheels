@@ -31,6 +31,7 @@ jobs:
     name: Build wheels and Upload
     needs: create_releases
     runs-on: ubuntu-22.04
+    timeout-minutes: 6000
     strategy:
       fail-fast: false
       matrix:
@@ -136,6 +137,7 @@ jobs:
             ${{ env.CACHE_KEY }}-
 
       - name: Build wheels
+        timeout-minutes: 6000
         run: |
           pip install setuptools==68.0.0 ninja packaging wheel
           export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
