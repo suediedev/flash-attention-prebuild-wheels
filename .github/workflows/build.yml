@@ -83,7 +83,6 @@ jobs:
           cuda: ${{ matrix.cuda-version }}
           linux-local-args: '["--toolkit"]'
           method: "network"
-          sub-packages: '["nvcc"]'
 
       - name: Set CUDA and PyTorch versions
         run: |
