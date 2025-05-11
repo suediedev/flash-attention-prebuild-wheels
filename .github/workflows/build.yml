@@ -25,21 +25,21 @@ jobs:
           body: |
             | Flash-Attention | Python | PyTorch | CUDA |
             |-----------------|--------|---------|------|
-            | 2.4.3, 2.5.9, 2.6.3, 2.7.4.post1 | 3.10, 3.11, 3.12 | 2.4.1, 2.5.1, 2.6.0, 2.7.0 | 11.8.0, 12.4.1, 12.6.3 |
+            | 2.4.3, 2.5.9, 2.6.3, 2.7.4.post1 | 3.10, 3.11, 3.12 | 2.7.0 | 12.8.1 |
 
   build_wheels:
     name: Build wheels and Upload
     needs: create_releases
     runs-on: ubuntu-22.04
-    timeout-minutes: 700
+    timeout-minutes: 1000
     strategy:
       fail-fast: false
       matrix:
         flash-attn-version: ["2.4.3", "2.5.9", "2.6.3", "2.7.4.post1"]
         python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.4.1", "2.5.1", "2.6.0", "2.7.0"]
+        torch-version: ["2.7.0"]
         # https://developer.nvidia.com/cuda-toolkit-archive
-        cuda-version: ["11.8.0", "12.4.1", "12.6.3"]
+        cuda-version: ["12.8.1"]
         exclude:
           # torch < 2.2 does not support Python 3.12
           - python-version: "3.12"
@@ -92,9 +92,8 @@ jobs:
 
       - name: Install build dependencies
         run: |
-          sudo apt install -y ninja-build
-          pip install -U pip
-          pip install setuptools==75.8.0 wheel setuptools packaging psutil
+          sudo apt install -y ninja-build clang
+          pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
 
       - name: Install PyTorch ${{ matrix.torch-version }}+cu${{ matrix.cuda-version }}
         run: |
@@ -123,31 +122,19 @@ jobs:
 
       - name: Checkout flash-attn
         run: |
-          git clone https://github.com/Dao-AILab/flash-attention.git
+          git clone https://github.com/Dao-AILab/flash-attention.git -b "v${{ matrix.flash-attn-version }}"
           cd flash-attention
-          git checkout v${{ matrix.flash-attn-version }}
-
-      # Add cache steps for CUDA extension build
-      - name: Cache CUDA extension build
-        uses: actions/cache@v3
-        with:
-          path: |
-            flash-attention/build
-            flash-attention/flash_attn.egg-info
-            flash-attention/**/*.so
-          key: ${{ env.CACHE_KEY }}-${{ hashFiles('flash-attention/csrc/**') }}
-          restore-keys: |
-            ${{ env.CACHE_KEY }}-
 
       - name: Build wheels
-        timeout-minutes: 600
+        timeout-minutes: 800
         run: |
           export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
           export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-          export MAX_JOBS=$(nproc)
-          export NVCC_THREADS=$(nproc)
+          export MAX_JOBS=2
+          export NVCC_THREADS=2
+          export FLASH_ATTENTION_FORCE_BUILD="TRUE"
           cd flash-attention
-          FLASH_ATTENTION_FORCE_BUILD="TRUE" python setup.py bdist_wheel --dist-dir=dist
+          python setup.py bdist_wheel --dist-dir=dist
           base_wheel_name=$(basename $(ls dist/*.whl | head -n 1))
           wheel_name=$(echo $base_wheel_name | sed "s/${{ matrix.flash-attn-version }}/${{ matrix.flash-attn-version }}+cu${{ env.MATRIX_CUDA_VERSION }}torch${{ env.MATRIX_TORCH_VERSION }}/")
           mv dist/$base_wheel_name dist/$wheel_name
