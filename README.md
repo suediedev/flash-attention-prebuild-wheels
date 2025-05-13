@@ -25,6 +25,14 @@ flash_attn-[FLASH_ATTN_VERSION]+cu[CUDA_VERSION]torch[TORCH_VERSION]-cp[PYTHON_V
 flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 ```
 
+### v0.0.9
+
+[Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9)
+
+| Flash-Attention | Python | PyTorch | CUDA |
+|-----------------|--------|---------|------|
+| 2.4.3, 2.5.9, 2.6.3 | 3.10, 3.11, 3.12 | 2.7.0 | 12.8.1 |
+
 ### v0.0.8
 
 [Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8)
