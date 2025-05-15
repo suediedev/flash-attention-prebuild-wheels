@@ -1,29 +1,39 @@
 # flash-attention pre-build wheels
 
-This repository provides wheels for the pre-build [flash-attention](https://github.com/Dao-AILab/flash-attention).  
+This repository provides wheels for the pre-built [flash-attention](https://github.com/Dao-AILab/flash-attention).  
 
 Since building flash-attention takes a **very long time** and is resource-intensive, 
 I also build and provide combinations of CUDA and PyTorch that are not officially distributed.
 
-The building Github Actions Workflow can be found [here](./.github/workflows/build.yml).
-
+The building Github Actions Workflow can be found [here](./.github/workflows/build.yml).  
 The built packages are available on the [release page](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases).
 
 
 ## Install
 
+1. Select the versions for Python, CUDA, PyTorch, and flash_attn.
+
 ```bash
+flash_attn-[flash_attn Version]+cu[CUDA Version]torch[PyTorch Version]-cp[Python Version]-cp[Python Version]-linux_x86_64.whl
+
+# Example: Python 3.11, CUDA 12.4, PyTorch 2.5, and flash_attn 2.6.3
+flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
+```
+
+2. Find the corresponding version of a wheel from the below table and [releases](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases)
+
+5. Direct Install or Download and Local Install
+
+```bash
+# Direct Install
 pip install https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.0.0/flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
+
+# Download and Local Install
+wget https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.0.0/flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
+pip install ./flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 ```
 
 ## Packages
-
-```bash
-flash_attn-[FLASH_ATTN_VERSION]+cu[CUDA_VERSION]torch[TORCH_VERSION]-cp[PYTHON_VERSION]-cp[PYTHON_VERSION]-linux_x86_64.whl
-
-# example: flash_attn=v2.6.3, CUDA=12.4.1, torch=2.5.1, Python=3.12
-flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
-```
 
 ### v0.0.9
 
