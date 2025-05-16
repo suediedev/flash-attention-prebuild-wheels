@@ -1,0 +1,14 @@
+services:
+  runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PERSONAL_ACCESS_TOKEN: $PERSONAL_ACCESS_TOKEN
+        REPOSITORY_URL: https://github.com/mjun0812/flash-attention-prebuild-wheels
+        RUNNER_NAME: self-hosted-runner
+        RUNNER_GROUP: default
+        RUNNER_LABELS: self-hosted
+        TARGET_ARCH: x64
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
