@@ -1,4 +1,4 @@
-name: "Docker and container hooks test"
+name: "Test self-hosted runner"
 on:
   workflow_dispatch:
 
@@ -10,10 +10,5 @@ jobs:
     container:
       image: docker:dind
     steps:
-      - name: Show docker info
-        run: |
-          docker -v
-          docker info
-          docker ps
       - run: ls
       - run: pwd
