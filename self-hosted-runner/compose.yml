@@ -12,3 +12,5 @@ services:
         TARGET_ARCH: x64
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    group_add:
+      - "${DOCKER_GID}"
