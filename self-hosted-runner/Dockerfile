@@ -11,7 +11,8 @@ ARG TARGET_ARCH="x64"
 ENV DEBIAN_FRONTEND=noninteractive \
     AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache
 
-RUN mkdir -p /opt/hostedtoolcache
+RUN mkdir -p /opt/hostedtoolcache \
+    && chown -R ubuntu:ubuntu /opt/hostedtoolcache
 
 RUN apt-get update && apt-get install -y --no-install-recommends\
     curl \
