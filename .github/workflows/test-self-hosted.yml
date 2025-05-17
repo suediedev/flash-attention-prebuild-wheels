@@ -29,6 +29,7 @@ jobs:
       image: ubuntu:22.04
     env:
       DEBIAN_FRONTEND: noninteractive
+      TERM: xterm-256color
     strategy:
       fail-fast: false
       matrix:
@@ -53,7 +54,8 @@ jobs:
             gcc \
             g++ \
             clang \
-            ninja-build
+            ninja-build \
+            keyboard-configuration
 
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -64,6 +66,8 @@ jobs:
           cuda: ${{ matrix.cuda-version }}
           linux-local-args: '["--toolkit"]'
           method: "network"
+        env:
+          DEBIAN_FRONTEND: noninteractive
 
       - name: Set CUDA and PyTorch versions
         run: |
