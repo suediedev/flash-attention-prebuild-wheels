@@ -44,8 +44,7 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 USER runner
 WORKDIR /home/runner
 
-RUN mkdir -p /home/runner/actions-runner \
-    && curl -fsSL -o actions-runner.tar.gz -L "https://github.com/actions/runner/releases/download/v${GH_RUNNER_VERSION}/actions-runner-linux-${TARGET_ARCH}-${GH_RUNNER_VERSION}.tar.gz" \
+RUN curl -fsSL -o actions-runner.tar.gz -L "https://github.com/actions/runner/releases/download/v${GH_RUNNER_VERSION}/actions-runner-linux-${TARGET_ARCH}-${GH_RUNNER_VERSION}.tar.gz" \
     && tar xf actions-runner.tar.gz \
     && rm actions-runner.tar.gz \
     && sudo ./bin/installdependencies.sh \
@@ -56,6 +55,7 @@ RUN mkdir -p /home/runner/actions-runner \
     --name $RUNNER_NAME \
     --runnergroup $RUNNER_GROUP \
     --labels "${RUNNER_LABELS},${TARGET_ARCH}" \
-    --work /home/runner/actions-runner
+    --work /home/runner/actions-runner \
+    --replace
 
 CMD ["./run.sh"]
