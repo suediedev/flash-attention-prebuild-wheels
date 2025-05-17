@@ -1,5 +1,6 @@
 services:
   runner:
+    privileged: true
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,7 +12,3 @@ services:
         RUNNER_GROUP: default
         RUNNER_LABELS: self-hosted
         TARGET_ARCH: x64
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    group_add:
-      - "${DOCKER_GID}"

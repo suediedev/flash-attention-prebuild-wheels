@@ -8,13 +8,21 @@ ARG RUNNER_GROUP="default"
 ARG RUNNER_LABELS="self-hosted,Linux"
 ARG TARGET_ARCH="x64"
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive \
+    AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache
+
+RUN mkdir -p /opt/hostedtoolcache
 
 RUN apt-get update && apt-get install -y --no-install-recommends\
     curl \
     ca-certificates \
     sudo \
     software-properties-common \
+    wget \
+    unzip \
+    zip \
+    git \
+    libc-bin \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Docker
@@ -29,20 +37,25 @@ RUN install -m 0755 -d /etc/apt/keyrings \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
     docker-ce-cli \
-    # docker-ce \
-    # containerd.io \
-    # docker-buildx-plugin \
-    # docker-compose-plugin \
+    docker-ce \
+    containerd.io \
+    docker-buildx-plugin \
+    docker-compose-plugin \
     && rm -rf /var/lib/apt/lists/*
 
 # Install dotnet
 RUN add-apt-repository ppa:dotnet/backports
 
 # ubuntu >= 24.04 image has user named 'ubuntu'
-RUN usermod -aG sudo ubuntu
+RUN usermod -aG sudo ubuntu \
+    && usermod -aG docker ubuntu
 
 # Allow sudo without password
 RUN echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 USER ubuntu
 WORKDIR /home/ubuntu
