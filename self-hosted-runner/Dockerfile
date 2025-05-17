@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:24.04
 
 ARG REPOSITORY_URL
 ARG PERSONAL_ACCESS_TOKEN
@@ -29,20 +29,24 @@ RUN install -m 0755 -d /etc/apt/keyrings \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
     docker-ce-cli \
+    # docker-ce \
+    # containerd.io \
+    # docker-buildx-plugin \
+    # docker-compose-plugin \
     && rm -rf /var/lib/apt/lists/*
 
 # Install dotnet
 RUN add-apt-repository ppa:dotnet/backports
 
-# Create runner user and setup group
-RUN useradd -mr -d /home/runner runner \
-    && usermod -aG sudo runner
+# ubuntu >= 24.04 image has user named 'ubuntu'
+RUN usermod -aG sudo ubuntu \
+    && usermod -aG docker ubuntu
 
 # Allow sudo without password
 RUN echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
-USER runner
-WORKDIR /home/runner
+USER ubuntu
+WORKDIR /home/ubuntu
 
 RUN curl -fsSL -o actions-runner.tar.gz -L "https://github.com/actions/runner/releases/download/v${GH_RUNNER_VERSION}/actions-runner-linux-${TARGET_ARCH}-${GH_RUNNER_VERSION}.tar.gz" \
     && tar xf actions-runner.tar.gz \
@@ -55,7 +59,7 @@ RUN curl -fsSL -o actions-runner.tar.gz -L "https://github.com/actions/runner/re
     --name $RUNNER_NAME \
     --runnergroup $RUNNER_GROUP \
     --labels "${RUNNER_LABELS},${TARGET_ARCH}" \
-    --work /home/runner/actions-runner \
+    --work /home/ubuntu/actions-runner \
     --replace
 
 CMD ["./run.sh"]
