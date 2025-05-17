@@ -8,7 +8,7 @@ jobs:
       - self-hosted
     timeout-minutes: 10
     container:
-      image: docker:dind
+      image: ghcr.io/actions/actions-runner:latest
     steps:
       - run: ls
       - run: pwd
@@ -26,7 +26,7 @@ jobs:
         # https://developer.nvidia.com/cuda-toolkit-archive
         cuda-version: ["12.8.1"]
     container:
-      image: ubuntu:22.04
+      image: ghcr.io/actions/actions-runner
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
