@@ -39,8 +39,7 @@ RUN install -m 0755 -d /etc/apt/keyrings \
 RUN add-apt-repository ppa:dotnet/backports
 
 # ubuntu >= 24.04 image has user named 'ubuntu'
-RUN usermod -aG sudo ubuntu \
-    && usermod -aG docker ubuntu
+RUN usermod -aG sudo ubuntu
 
 # Allow sudo without password
 RUN echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
