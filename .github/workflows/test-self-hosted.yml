@@ -38,7 +38,8 @@ jobs:
     steps:
       - name: Install tools
         run: |
-          apt-get update && apt-get install -y \
+          export DEBIAN_FRONTEND=noninteractive
+          apt-get update && apt-get install -y --no-install-recommends \
             curl \
             ca-certificates \
             sudo \
