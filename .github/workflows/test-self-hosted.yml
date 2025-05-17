@@ -27,6 +27,8 @@ jobs:
     timeout-minutes: 1000
     container:
       image: ubuntu:22.04
+    env:
+      DEBIAN_FRONTEND: noninteractive
     strategy:
       fail-fast: false
       matrix:
@@ -38,7 +40,6 @@ jobs:
     steps:
       - name: Install tools
         run: |
-          export DEBIAN_FRONTEND=noninteractive
           apt-get update && apt-get install -y --no-install-recommends \
             curl \
             ca-certificates \
