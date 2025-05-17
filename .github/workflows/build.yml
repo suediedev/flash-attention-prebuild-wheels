@@ -25,7 +25,7 @@ jobs:
           body: |
             | Flash-Attention | Python | PyTorch | CUDA |
             |-----------------|--------|---------|------|
-            | 2.4.3, 2.5.9, 2.6.3, 2.7.4.post1 | 3.10, 3.11, 3.12 | 2.7.0 | 12.8.1 |
+            | 2.4.3, 2.5.9, 2.6.3, 2.7.4 | 3.10, 3.11, 3.12 | 2.7.0 | 12.8.1 |
 
   build_wheels:
     name: Build wheels and Upload
@@ -35,7 +35,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flash-attn-version: ["2.4.3", "2.5.9", "2.6.3", "2.7.4.post1"]
+        flash-attn-version: ["2.4.3", "2.5.9", "2.6.3"]
         python-version: ["3.10", "3.11", "3.12"]
         torch-version: ["2.7.0"]
         # https://developer.nvidia.com/cuda-toolkit-archive
@@ -166,3 +166,154 @@ jobs:
           asset_path: flash-attention/dist/${{ env.wheel_name }}
           asset_name: ${{ env.wheel_name }}
           asset_content_type: application/*
+
+  build_wheels_self_hosted:
+      name: Build wheels and Upload
+      needs: create_releases
+      runs-on: self-hosted
+      container:
+        image: ubuntu:22.04
+      env:
+        DEBIAN_FRONTEND: noninteractive
+        TERM: xterm-256color
+      timeout-minutes: 1000
+      strategy:
+        fail-fast: false
+        matrix:
+          flash-attn-version: ["2.7.4"]
+          python-version: ["3.10", "3.11", "3.12"]
+          torch-version: ["2.7.0"]
+          # https://developer.nvidia.com/cuda-toolkit-archive
+          cuda-version: ["12.8.1"]
+          exclude:
+            # torch < 2.2 does not support Python 3.12
+            - python-version: "3.12"
+              torch-version: "2.0.1"
+            - python-version: "3.12"
+              torch-version: "2.1.2"
+            # torch 2.0.1 does not support CUDA 12.x
+            - torch-version: "2.0.1"
+              cuda-version: "12.1.1"
+            - torch-version: "2.0.1"
+              cuda-version: "12.4.1"
+            - torch-version: "2.0.1"
+              cuda-version: "12.6.3"
+            - torch-version: "2.0.1"
+              cuda-version: "12.8.1"
+            # torch 2.7.0 does not support CUDA 12.4
+            - torch-version: "2.7.0"
+              cuda-version: "12.4.1"
+
+      steps:
+        - name: Install tools
+          run: |
+            apt-get update && apt-get install -y --no-install-recommends \
+              curl \
+              ca-certificates \
+              sudo \
+              software-properties-common \
+              wget \
+              unzip \
+              zip \
+              git \
+              build-essential \
+              gcc \
+              g++ \
+              clang \
+              ninja-build \
+              keyboard-configuration
+
+        - uses: actions/checkout@v4
+        - uses: actions/setup-python@v5
+          with:
+            python-version: ${{ matrix.python-version }}
+        - uses: Jimver/cuda-toolkit@master
+          env:
+            DEBIAN_FRONTEND: noninteractive
+          with:
+            cuda: ${{ matrix.cuda-version }}
+            linux-local-args: '["--toolkit"]'
+            method: "network"
+
+        - name: Set CUDA and PyTorch versions
+          run: |
+            echo "MATRIX_CUDA_VERSION=$(echo ${{ matrix.cuda-version }} | awk -F \. {'print $1 $2'})" >> $GITHUB_ENV
+            echo "MATRIX_TORCH_VERSION=$(echo ${{ matrix.torch-version }} | awk -F \. {'print $1 "." $2'})" >> $GITHUB_ENV
+            echo "CACHE_KEY=cuda-ext-${{ matrix.flash-attn-version }}-py${{ matrix.python-version }}-torch${{ matrix.torch-version }}-cuda${{ matrix.cuda-version }}" >> $GITHUB_ENV
+
+        - name: Install build dependencies
+          run: |
+            sudo apt install -y ninja-build clang
+            pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
+
+        - name: Install PyTorch ${{ matrix.torch-version }}+cu${{ matrix.cuda-version }}
+          run: |
+            export TORCH_CUDA_VERSION=$(python -c "from os import environ as env; \
+                support_cuda_versions = { \
+                    '2.0': [117, 118], \
+                    '2.1': [118, 121], \
+                    '2.2': [118, 121], \
+                    '2.3': [118, 121], \
+                    '2.4': [118, 121, 124], \
+                    '2.5': [118, 121, 124], \
+                    '2.6': [118, 124, 126], \
+                    '2.7': [118, 126, 128], \
+                }; \
+                target_cuda_versions = support_cuda_versions[env['MATRIX_TORCH_VERSION']]; \
+                cuda_version = int(env['MATRIX_CUDA_VERSION']); \
+                closest_version = min(target_cuda_versions, key=lambda x: abs(x - cuda_version)); \
+                print(closest_version) \
+            ")
+            pip install --no-cache-dir torch==${{ matrix.torch-version }} --index-url https://download.pytorch.org/whl/cu${TORCH_CUDA_VERSION}
+            nvcc --version
+            python -V
+            python -c "import torch; print('PyTorch:', torch.__version__)"
+            python -c "import torch; print('CUDA:', torch.version.cuda)"
+            python -c "from torch.utils import cpp_extension; print(cpp_extension.CUDA_HOME)"
+
+        - name: Checkout flash-attn
+          run: |
+            git clone https://github.com/Dao-AILab/flash-attention.git -b "v${{ matrix.flash-attn-version }}"
+            cd flash-attention
+
+        - name: Build wheels
+          timeout-minutes: 800
+          run: |
+            export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
+            export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+            export MAX_JOBS=2
+            export NVCC_THREADS=4
+            export FLASH_ATTENTION_FORCE_BUILD="TRUE"
+            cd flash-attention
+            python setup.py bdist_wheel --dist-dir=dist
+            base_wheel_name=$(basename $(ls dist/*.whl | head -n 1))
+            wheel_name=$(echo $base_wheel_name | sed "s/${{ matrix.flash-attn-version }}/${{ matrix.flash-attn-version }}+cu${{ env.MATRIX_CUDA_VERSION }}torch${{ env.MATRIX_TORCH_VERSION }}/")
+            mv dist/$base_wheel_name dist/$wheel_name
+            echo "wheel_name=$wheel_name" >> $GITHUB_ENV
+
+        - name: Install Test
+          run: |
+            pip install flash-attention/dist/${{ env.wheel_name }}
+            python -c "import flash_attn; print(flash_attn.__version__)"
+
+        - name: Get the tag version
+          id: extract_branch
+          run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+        - name: Get Release with Tag
+          id: get_release
+          uses: joutvhu/get-release@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            tag_name: ${{ steps.extract_branch.outputs.branch }}
+
+        - name: Upload Release Asset
+          uses: actions/upload-release-asset@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            upload_url: ${{ steps.get_release.outputs.upload_url }}
+            asset_path: flash-attention/dist/${{ env.wheel_name }}
+            asset_name: ${{ env.wheel_name }}
+            asset_content_type: application/*
