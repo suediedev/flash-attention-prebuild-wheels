@@ -11,6 +11,16 @@ jobs:
       - run: ls
       - run: pwd
 
+  containers-test:
+    runs-on:
+      - self-hosted
+    container:
+      image: ubuntu:22.04
+    timeout-minutes: 10
+    steps:
+      - run: ls
+      - run: pwd
+
   test-build:
     runs-on:
       - self-hosted
@@ -18,11 +28,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flash-attn-version: ["2.4.3", "2.5.9"]
+        flash-attn-version: ["2.4.3"]
         python-version: ["3.12"]
         torch-version: ["2.7.0"]
         # https://developer.nvidia.com/cuda-toolkit-archive
-        cuda-version: ["12.8.1"]
+        cuda-version: ["11.8.0", "12.8.1"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
