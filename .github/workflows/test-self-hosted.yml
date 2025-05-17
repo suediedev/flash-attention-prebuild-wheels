@@ -38,7 +38,7 @@ jobs:
     steps:
       - name: Install tools
         run: |
-          sudo apt-get update && sudo apt-get install -y \
+          apt-get update && apt-get install -y \
             curl \
             ca-certificates \
             sudo \
@@ -71,7 +71,6 @@ jobs:
 
       - name: Install build dependencies
         run: |
-          sudo apt install -y ninja-build clang
           pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
 
       - name: Install PyTorch ${{ matrix.torch-version }}+cu${{ matrix.cuda-version }}
