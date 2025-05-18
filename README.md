@@ -38,6 +38,18 @@ pip install ./flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 
 ## Packages
 
+### v0.1.0
+
+[Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0)
+
+| Flash-Attention            | Python           | PyTorch | CUDA   |
+| -------------------------- | ---------------- | ------- | ------ |
+| 2.4.3, 2.5.9, 2.6.3, 2.7.4 | 3.10, 3.11, 3.12 | 2.7.0   | 12.8.1 |
+
+v2.7.4 and v2.7.4.post1 are the same version.
+
+From this release, self-hosted runners are used for building the some wheels.
+
 ### v0.0.9
 
 [Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9)
@@ -116,7 +128,7 @@ Skip for experimental reasons.
 
 ## Self build
 
-If you want to build the wheels yourself, you can folk this repository and run the build workflow.
+If you want to build the wheels yourself, you can fork this repository and run the build workflow.
 
 1. Fork this repository
 2. Edit workflow file `.github/workflows/build.yml` to set the version you want to build.
