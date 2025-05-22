@@ -1,6 +1,7 @@
 services:
   runner:
     privileged: true
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
