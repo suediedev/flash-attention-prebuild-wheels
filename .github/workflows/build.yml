@@ -317,3 +317,8 @@ jobs:
           asset_path: flash-attention/dist/${{ env.wheel_name }}
           asset_name: ${{ env.wheel_name }}
           asset_content_type: application/*
+
+      - name: Clean up
+        if: always()
+        run: |
+          sudo rm -rf /opt/hostedtoolcache/Python/${{ matrix.python-version }}*
