@@ -1,3 +1,5 @@
+# Ref: https://github.com/Foul-Tarnished/flash-attention/blob/main/.github/workflows/build-wheels.yml
+
 name: "Test Windows build"
 on:
   workflow_dispatch:
@@ -65,8 +67,7 @@ jobs:
 
       - name: Install build dependencies
         run: |
-          choco install -y ninja
-          pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
+          pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil ninja
         shell: pwsh
 
       - name: Install PyTorch ${{ matrix.torch-version }}+cu${{ matrix.cuda-version }}
@@ -99,9 +100,9 @@ jobs:
           $env:DISTUTILS_USE_SDK = 1
           $env:BUILD_TARGET = "cuda"
 
-          $env:CUDA_HOME = $env:CUDA_PATH
-          $env:CUDA_ROOT = $env:CUDA_PATH
-          $env:PATH = "$env:CUDA_PATH\bin;$env:PATH"
+          $env:CUDA_PATH = $env:CONDA_PREFIX
+          $env:CUDA_HOME = $env:CONDA_PREFIX
+
           $env:MAX_JOBS = "2"
           $env:NVCC_THREADS = "2"
           $env:FLASH_ATTENTION_FORCE_BUILD = "TRUE"
