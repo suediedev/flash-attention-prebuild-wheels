@@ -1,0 +1,121 @@
+name: "Test Windows build"
+on:
+  workflow_dispatch:
+
+jobs:
+  build_wheels:
+    name: Build wheels and Upload
+    runs-on: windows-latest
+    timeout-minutes: 1000
+    strategy:
+      fail-fast: false
+      matrix:
+        flash-attn-version: ["2.6.3"]
+        python-version: ["3.11"]
+        torch-version: ["2.6.0"]
+        # https://developer.nvidia.com/cuda-toolkit-archive
+        cuda-version: ["12.6.3"]
+        exclude:
+          # torch < 2.2 does not support Python 3.12
+          - python-version: "3.12"
+            torch-version: "2.0.1"
+          - python-version: "3.12"
+            torch-version: "2.1.2"
+          # torch 2.0.1 does not support CUDA 12.x
+          - torch-version: "2.0.1"
+            cuda-version: "12.1.1"
+          - torch-version: "2.0.1"
+            cuda-version: "12.4.1"
+          - torch-version: "2.0.1"
+            cuda-version: "12.6.3"
+          - torch-version: "2.0.1"
+            cuda-version: "12.8.1"
+          # torch 2.7.0 does not support CUDA 12.4
+          - torch-version: "2.7.0"
+            cuda-version: "12.4.1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Git long paths
+        run: git config --system core.longpaths true
+        shell: pwsh
+
+      - name: Install VS2022 BuildTools 17.9.7
+        run: choco install -y visualstudio2022buildtools --version=117.9.7.0 --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --installChannelUri https://aka.ms/vs/17/release/180911598_-255012421/channel"
+        shell: pwsh
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - uses: Jimver/cuda-toolkit@master
+        with:
+          cuda: ${{ matrix.cuda-version }}
+          method: "network"
+          sub-packages: '["nvcc", "cudart", "cublas", "cufft", "curand", "cusolver", "cusparse", "visual_studio_integration"]'
+
+      - name: Set CUDA and PyTorch versions
+        run: |
+          $cudaVersion = "${{ matrix.cuda-version }}" -replace '\.', ''
+          $cudaVersion = $cudaVersion.Substring(0, [Math]::Min(3, $cudaVersion.Length))
+          echo "MATRIX_CUDA_VERSION=$cudaVersion" >> $env:GITHUB_ENV
+          $torchVersion = "${{ matrix.torch-version }}" -replace '^(\d+\.\d+).*', '$1'
+          echo "MATRIX_TORCH_VERSION=$torchVersion" >> $env:GITHUB_ENV
+        shell: pwsh
+
+      - name: Install build dependencies
+        run: |
+          choco install -y ninja
+          pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
+        shell: pwsh
+
+      - name: Install PyTorch ${{ matrix.torch-version }}+cu${{ matrix.cuda-version }}
+        run: |
+          $env:TORCH_CUDA_VERSION = python -c "from os import environ as env; support_cuda_versions = { '2.0': [117, 118], '2.1': [118, 121], '2.2': [118, 121], '2.3': [118, 121], '2.4': [118, 121, 124], '2.5': [118, 121, 124], '2.6': [118, 124, 126], '2.7': [118, 126, 128], '2.8': [128], }; target_cuda_versions = support_cuda_versions[env['MATRIX_TORCH_VERSION']]; cuda_version = int(env['MATRIX_CUDA_VERSION']); closest_version = min(target_cuda_versions, key=lambda x: abs(x - cuda_version)); print(closest_version)"
+
+          if ("${{ matrix.torch-version }}" -like "*dev*") {
+            pip install --pre torch==${{ matrix.torch-version }} --index-url https://download.pytorch.org/whl/nightly/cu$env:TORCH_CUDA_VERSION
+          } else {
+            pip install --no-cache-dir torch==${{ matrix.torch-version }} --index-url https://download.pytorch.org/whl/cu$env:TORCH_CUDA_VERSION
+          }
+
+          nvcc --version
+          python -V
+          python -c "import torch; print('PyTorch:', torch.__version__)"
+          python -c "import torch; print('CUDA:', torch.version.cuda)"
+          python -c "from torch.utils import cpp_extension; print(cpp_extension.CUDA_HOME)"
+        shell: pwsh
+
+      - name: Checkout flash-attn
+        run: |
+          git clone https://github.com/Dao-AILab/flash-attention.git -b "v${{ matrix.flash-attn-version }}"
+        shell: pwsh
+
+      - name: Build wheels
+        timeout-minutes: 800
+        run: |
+          Import-Module 'C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\Microsoft.VisualStudio.DevShell.dll'
+          Enter-VsDevShell -VsInstallPath 'C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools' -DevCmdArguments '-arch=x64 -host_arch=x64'
+          $env:DISTUTILS_USE_SDK = 1
+          $env:BUILD_TARGET = "cuda"
+
+          $env:CUDA_HOME = $env:CUDA_PATH
+          $env:CUDA_ROOT = $env:CUDA_PATH
+          $env:PATH = "$env:CUDA_PATH\bin;$env:PATH"
+          $env:MAX_JOBS = "2"
+          $env:NVCC_THREADS = "2"
+          $env:FLASH_ATTENTION_FORCE_BUILD = "TRUE"
+
+          cd flash-attention
+          python setup.py bdist_wheel --dist-dir=dist
+          $baseWheelName = Get-ChildItem -Path "dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
+          $wheelName = $baseWheelName -replace "${{ matrix.flash-attn-version }}", "${{ matrix.flash-attn-version }}+cu$env:MATRIX_CUDA_VERSION" + "torch$env:MATRIX_TORCH_VERSION" + "-win"
+          Move-Item "dist\$baseWheelName" "dist\$wheelName"
+          echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
+        shell: pwsh
+
+      - name: Install Test
+        run: |
+          pip install flash-attention/dist/$env:wheel_name
+          python -c "import flash_attn; print(flash_attn.__version__)"
+        shell: pwsh
