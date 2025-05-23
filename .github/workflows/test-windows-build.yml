@@ -54,7 +54,6 @@ jobs:
         with:
           cuda: ${{ matrix.cuda-version }}
           method: "network"
-          sub-packages: '["nvcc", "cudart", "cublas", "cufft", "curand", "cusolver", "cusparse", "visual_studio_integration"]'
 
       - name: Set CUDA and PyTorch versions
         run: |
@@ -99,9 +98,6 @@ jobs:
           Enter-VsDevShell -VsInstallPath 'C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools' -DevCmdArguments '-arch=x64 -host_arch=x64'
           $env:DISTUTILS_USE_SDK = 1
           $env:BUILD_TARGET = "cuda"
-
-          $env:CUDA_PATH = $env:CONDA_PREFIX
-          $env:CUDA_HOME = $env:CONDA_PREFIX
 
           $env:MAX_JOBS = "2"
           $env:NVCC_THREADS = "2"
