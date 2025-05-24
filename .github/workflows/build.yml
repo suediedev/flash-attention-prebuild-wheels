@@ -190,6 +190,9 @@ jobs:
     runs-on: self-hosted
     container:
       image: ubuntu:22.04
+    defaults:
+      run:
+        shell: bash
     env:
       DEBIAN_FRONTEND: noninteractive
       TERM: xterm-256color
@@ -258,6 +261,7 @@ jobs:
         run: |
           echo "MATRIX_CUDA_VERSION=$(echo ${{ matrix.cuda-version }} | awk -F \. {'print $1 $2'})" >> $GITHUB_ENV
           echo "MATRIX_TORCH_VERSION=$(echo ${{ matrix.torch-version }} | awk -F \. {'print $1 "." $2'})" >> $GITHUB_ENV
+        shell: bash
 
       - name: Install build dependencies
         run: |
@@ -265,6 +269,7 @@ jobs:
           pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
 
       - name: Install PyTorch ${{ matrix.torch-version }}+cu${{ matrix.cuda-version }}
+        shell: bash
         run: |
           export TORCH_CUDA_VERSION=$(python -c "from os import environ as env; \
               support_cuda_versions = { \
@@ -302,6 +307,7 @@ jobs:
 
       - name: Build wheels
         timeout-minutes: 800
+        shell: bash
         run: |
           export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
           export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
@@ -323,6 +329,7 @@ jobs:
 
       - name: Get the tag version
         id: extract_branch
+        shell: bash
         run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
       - name: Get Release with Tag
