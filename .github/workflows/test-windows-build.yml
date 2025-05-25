@@ -106,7 +106,7 @@ jobs:
           cd flash-attention
           python setup.py bdist_wheel --dist-dir=dist
           $baseWheelName = Get-ChildItem -Path "dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
-          $wheelName = $baseWheelName -replace "${{ matrix.flash-attn-version }}", "${{ matrix.flash-attn-version }}+cu$env:MATRIX_CUDA_VERSION" + "torch$env:MATRIX_TORCH_VERSION" + "-win"
+          $wheelName = $baseWheelName.Replace("${{ matrix.flash-attn-version }}", "${{ matrix.flash-attn-version }}+cu$env:MATRIX_CUDA_VERSION" + "torch$env:MATRIX_TORCH_VERSION")
           Move-Item "dist\$baseWheelName" "dist\$wheelName"
           echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
         shell: pwsh
