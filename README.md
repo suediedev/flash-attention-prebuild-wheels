@@ -38,6 +38,20 @@ pip install ./flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 
 ## Packages
 
+
+### v0.3.1
+
+[Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.1)
+
+## Windows x86_64
+
+| Flash-Attention | Python | PyTorch | CUDA |
+| --- | --- | --- | --- |
+| 2.6.3 | 3.11 | 2.6.0 | 12.6.3 |
+
+From this version, Wheels for Windows are released.  
+However, we are waiting for a report on how it works because we have not tested it enough.
+
 ### v0.2.1
 
 [Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1)
