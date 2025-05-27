@@ -27,7 +27,7 @@ jobs:
 
             | Flash-Attention | Python | PyTorch | CUDA |
             | --- | --- | --- | --- |
-            | 2.6.3 | 3.11 | 2.6.0 | 12.6.3 |
+            | 2.4.3, 2.5.9, 2.6.3, 2.7.4 | 3.10, 3.11, 3.12 | 2.3.1, 2.4.1, 2.5.1, 2.6.0, 2.7.0 | 11.8.0, 12.4.1 |
 
   # #########################################################
   # Build wheels with GitHub hosted runner
@@ -373,11 +373,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flash-attn-version: ["2.6.3"]
-        python-version: ["3.11"]
-        torch-version: ["2.6.0"]
+        flash-attn-version: ["2.4.3", "2.5.9", "2.6.3", "2.7.4"]
+        python-version: ["3.10", "3.11", "3.12"]
+        torch-version: ["2.3.1", "2.4.1", "2.5.1", "2.6.0", "2.7.0"]
         # https://developer.nvidia.com/cuda-toolkit-archive
-        cuda-version: ["12.6.3"]
+        cuda-version: ["11.8.0", 12.4.1"]
         exclude:
           # torch < 2.2 does not support Python 3.12
           - python-version: "3.12"
