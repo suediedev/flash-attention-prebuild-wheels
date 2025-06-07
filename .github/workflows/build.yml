@@ -10,24 +10,23 @@ jobs:
     name: Create Releases
     runs-on: ubuntu-latest
     steps:
-      - name: Get the tag version
-        id: extract_branch
-        run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-        shell: bash
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.extract_branch.outputs.branch }}
-          release_name: ${{ steps.extract_branch.outputs.branch }}
-          body: |
-            ## Windows x86_64
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            --title "${{ github.ref_name }}" \
+            --notes "## Linux x86_64
 
-            | Flash-Attention | Python | PyTorch | CUDA |
-            | --- | --- | --- | --- |
-            | 2.4.3, 2.5.9, 2.6.3, 2.7.4 | 3.10, 3.11, 3.12 | 2.3.1, 2.4.1, 2.5.1, 2.6.0, 2.7.0 | 11.8.0, 12.4.1 |
+          | Flash-Attention | Python | PyTorch | CUDA |
+          | --- | --- | --- | --- |
+          | 2.4.3, 2.5.9, 2.6.3, 2.7.4 | 3.10, 3.11, 3.12 | 2.7.1 | 12.8.1 |
+
+          ## Windows x86_64
+
+          | Flash-Attention | Python | PyTorch | CUDA |
+          | --- | --- | --- | --- |
+          | 2.4.3, 2.5.9, 2.6.3, 2.7.4 | 3.10, 3.11, 3.12 | 2.4.1, 2.5.1, 2.6.0, 2.7.1 | 12.4.1, 12.8.1 |"
 
   # #########################################################
   # Build wheels with GitHub hosted runner
@@ -45,7 +44,7 @@ jobs:
       matrix:
         flash-attn-version: ["2.4.3", "2.5.9", "2.6.3"]
         python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.8.0.dev20250523"]
+        torch-version: ["2.7.1"]
         # # https://developer.nvidia.com/cuda-toolkit-archive
         cuda-version: ["12.8.1"]
         exclude:
@@ -91,7 +90,7 @@ jobs:
       - uses: Jimver/cuda-toolkit@master
         with:
           cuda: ${{ matrix.cuda-version }}
-          linux-local-args: '["--toolkit"]'
+          sub-packages: '["nvcc", "toolkit"]'
           method: "network"
 
       - name: Install build dependencies
@@ -99,13 +98,12 @@ jobs:
           sudo apt install -y ninja-build clang
           pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
 
-      - name: Set CUDA and PyTorch versions and environment variables
+      - name: Set environment variables
         run: |
           export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
           export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
           export MAX_JOBS=2
           export NVCC_THREADS=2
-          export FLASH_ATTENTION_FORCE_BUILD=TRUE
 
       - name: Build wheels
         timeout-minutes: 800
@@ -120,27 +118,24 @@ jobs:
           pip install flash-attention/dist/${{ env.wheel_name }}
           python -c "import flash_attn; print(flash_attn.__version__)"
 
-      - name: Get the tag version
-        id: extract_branch
-        run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-
-      - name: Get Release with Tag
-        id: get_release
-        uses: joutvhu/get-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.extract_branch.outputs.branch }}
-
       - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: flash-attention/dist/${{ env.wheel_name }}
-          asset_name: ${{ env.wheel_name }}
-          asset_content_type: application/*
+        run: |
+          $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
+          $wheel_path = "flash-attention/dist/$env:wheel_name"
+
+          # Check if the file exists
+          if (-not (Test-Path $wheel_path)) {
+            Write-Host "Error: Wheel file not found at $wheel_path"
+            exit 1
+          }
+
+          # Upload the release asset using GitHub CLI
+          gh release upload "$tag_name" "$wheel_path" --clobber
+
+          Write-Host "Successfully uploaded $env:wheel_name to release $tag_name"
+        shell: pwsh
 
   # #########################################################
   # Build wheels with self-hosted runner
@@ -163,7 +158,7 @@ jobs:
       matrix:
         flash-attn-version: ["2.7.4"]
         python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.8.0.dev20250523"]
+        torch-version: ["2.7.1"]
         # https://developer.nvidia.com/cuda-toolkit-archive
         cuda-version: ["12.8.1"]
         exclude:
@@ -184,7 +179,6 @@ jobs:
           # torch 2.7.0 does not support CUDA 12.4
           - torch-version: "2.7.0"
             cuda-version: "12.4.1"
-
     steps:
       - name: Install tools
         shell: bash
@@ -205,6 +199,17 @@ jobs:
             ninja-build \
             keyboard-configuration
 
+      - name: Install gh
+        run: |
+          sudo mkdir -p -m 755 /etc/apt/keyrings
+          out=$(mktemp)
+          wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg
+          cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null
+          sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
+          echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+          sudo apt update
+          sudo apt install gh -y
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
@@ -212,24 +217,22 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - uses: Jimver/cuda-toolkit@master
-        env:
-          DEBIAN_FRONTEND: noninteractive
         with:
           cuda: ${{ matrix.cuda-version }}
-          linux-local-args: '["--toolkit"]'
+          sub-packages: '["nvcc", "toolkit"]'
           method: "network"
 
       - name: Install build dependencies
         run: |
+          sudo apt install -y ninja-build clang
           pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
 
-          - name: Set CUDA and PyTorch versions and environment variables
-          run: |
-            export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
-            export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-            export MAX_JOBS=2
-            export NVCC_THREADS=2
-            export FLASH_ATTENTION_FORCE_BUILD=TRUE
+      - name: Set environment variables
+        run: |
+          export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
+          export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+          export MAX_JOBS=2
+          export NVCC_THREADS=2
 
       - name: Build wheels
         timeout-minutes: 800
@@ -244,28 +247,24 @@ jobs:
           pip install flash-attention/dist/${{ env.wheel_name }}
           python -c "import flash_attn; print(flash_attn.__version__)"
 
-      - name: Get the tag version
-        id: extract_branch
-        shell: bash
-        run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-
-      - name: Get Release with Tag
-        id: get_release
-        uses: joutvhu/get-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.extract_branch.outputs.branch }}
-
       - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: flash-attention/dist/${{ env.wheel_name }}
-          asset_name: ${{ env.wheel_name }}
-          asset_content_type: application/*
+        run: |
+          $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
+          $wheel_path = "flash-attention/dist/$env:wheel_name"
+
+          # Check if the file exists
+          if (-not (Test-Path $wheel_path)) {
+            Write-Host "Error: Wheel file not found at $wheel_path"
+            exit 1
+          }
+
+          # Upload the release asset using GitHub CLI
+          gh release upload "$tag_name" "$wheel_path" --clobber
+
+          Write-Host "Successfully uploaded $env:wheel_name to release $tag_name"
+        shell: pwsh
 
       - name: Clean up
         if: always()
@@ -281,27 +280,11 @@ jobs:
       matrix:
         flash-attn-version: ["2.4.3", "2.5.9", "2.6.3", "2.7.4"]
         python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.3.1", "2.4.1", "2.5.1", "2.6.0", "2.7.0"]
+        torch-version: ["2.4.1", "2.5.1", "2.6.0", "2.7.1"]
         # https://developer.nvidia.com/cuda-toolkit-archive
-        cuda-version: ["11.8.0", "12.4.1"]
-        exclude:
-          # torch < 2.2 does not support Python 3.12
-          - python-version: "3.12"
-            torch-version: "2.0.1"
-          - python-version: "3.12"
-            torch-version: "2.1.2"
-          # torch 2.0.1 does not support CUDA 12.x
-          - torch-version: "2.0.1"
-            cuda-version: "12.1.1"
-          - torch-version: "2.0.1"
-            cuda-version: "12.4.1"
-          - torch-version: "2.0.1"
-            cuda-version: "12.6.3"
-          - torch-version: "2.0.1"
-            cuda-version: "12.8.1"
-          # torch 2.7.0 does not support CUDA 12.4
-          - torch-version: "2.7.0"
-            cuda-version: "12.4.1"
+        # CUDA 11.8 cannot build flash-attn.
+        # https://github.com/Dao-AILab/flash-attention/issues/595
+        cuda-version: ["12.4.1", "12.8.1"]
     steps:
       - uses: actions/checkout@v4
 
@@ -309,8 +292,11 @@ jobs:
         run: git config --system core.longpaths true
         shell: pwsh
 
-      - name: Install VS2022 BuildTools 17.9.7
-        run: choco install -y visualstudio2022buildtools --version=117.9.7.0 --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --installChannelUri https://aka.ms/vs/17/release/180911598_-255012421/channel"
+      - name: Install VS2022 BuildTools
+        run: |
+          choco install -y visualstudio2022buildtools `
+            --version=117.14.1 `
+            --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
         shell: pwsh
 
       - uses: actions/setup-python@v5
@@ -338,7 +324,7 @@ jobs:
 
       - name: Install PyTorch ${{ matrix.torch-version }}+cu${{ matrix.cuda-version }}
         run: |
-          $env:TORCH_CUDA_VERSION = python -c "from os import environ as env; support_cuda_versions = { '2.0': [117, 118], '2.1': [118, 121], '2.2': [118, 121], '2.3': [118, 121], '2.4': [118, 121, 124], '2.5': [118, 121, 124], '2.6': [118, 124, 126], '2.7': [118, 126, 128], '2.8': [128], }; target_cuda_versions = support_cuda_versions[env['MATRIX_TORCH_VERSION']]; cuda_version = int(env['MATRIX_CUDA_VERSION']); closest_version = min(target_cuda_versions, key=lambda x: abs(x - cuda_version)); print(closest_version)"
+          $env:TORCH_CUDA_VERSION = python -c "from os import environ as env; support_cuda_versions = { '2.1': [121], '2.2': [121], '2.3': [121], '2.4': [121, 124], '2.5': [121, 124], '2.6': [124, 126], '2.7': [126, 128], '2.8': [128], }; target_cuda_versions = support_cuda_versions[env['MATRIX_TORCH_VERSION']]; cuda_version = int(env['MATRIX_CUDA_VERSION']); closest_version = min(target_cuda_versions, key=lambda x: abs(x - cuda_version)); print(closest_version)"
 
           if ("${{ matrix.torch-version }}" -like "*dev*") {
             pip install --pre torch==${{ matrix.torch-version }} --index-url https://download.pytorch.org/whl/nightly/cu$env:TORCH_CUDA_VERSION
@@ -384,25 +370,21 @@ jobs:
           python -c "import flash_attn; print(flash_attn.__version__)"
         shell: pwsh
 
-      - name: Get the tag version
-        id: extract_branch
-        shell: bash
-        run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-
-      - name: Get Release with Tag
-        id: get_release
-        uses: joutvhu/get-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.extract_branch.outputs.branch }}
-
       - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: flash-attention/dist/${{ env.wheel_name }}
-          asset_name: ${{ env.wheel_name }}
-          asset_content_type: application/*
+        run: |
+          $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
+          $wheel_path = "flash-attention/dist/$env:wheel_name"
+
+          # Check if the file exists
+          if (-not (Test-Path $wheel_path)) {
+            Write-Host "Error: Wheel file not found at $wheel_path"
+            exit 1
+          }
+
+          # Upload the release asset using GitHub CLI
+          gh release upload "$tag_name" "$wheel_path" --clobber
+
+          Write-Host "Successfully uploaded $env:wheel_name to release $tag_name"
+        shell: pwsh
