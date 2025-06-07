@@ -1,40 +1,14 @@
-name: Build wheels and upload to GitHub Releases
+name: Test workflow
 
 on:
-  push:
-    tags:
-      - "v*"
+  workflow_dispatch:
 
 jobs:
-  create_releases:
-    name: Create Releases
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get the tag version
-        id: extract_branch
-        run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-        shell: bash
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.extract_branch.outputs.branch }}
-          release_name: ${{ steps.extract_branch.outputs.branch }}
-          body: |
-            ## Windows x86_64
-
-            | Flash-Attention | Python | PyTorch | CUDA |
-            | --- | --- | --- | --- |
-            | 2.4.3, 2.5.9, 2.6.3, 2.7.4 | 3.10, 3.11, 3.12 | 2.3.1, 2.4.1, 2.5.1, 2.6.0, 2.7.0 | 11.8.0, 12.4.1 |
-
   # #########################################################
   # Build wheels with GitHub hosted runner
   # #########################################################
   build_wheels:
-    name: Build wheels and Upload
-    needs: create_releases
+    name: Build wheels
     runs-on: ubuntu-22.04
     env:
       DEBIAN_FRONTEND: noninteractive
@@ -146,8 +120,7 @@ jobs:
   # Build wheels with self-hosted runner
   # #########################################################
   build_wheels_self_hosted:
-    name: Build wheels and Upload
-    needs: create_releases
+    name: Build wheels
     runs-on: self-hosted
     container:
       image: ubuntu:22.04
@@ -271,138 +244,3 @@ jobs:
         if: always()
         run: |
           sudo rm -rf /opt/hostedtoolcache/Python/${{ matrix.python-version }}*
-
-  build_windows_wheels:
-    name: Build wheels and Upload
-    runs-on: windows-latest
-    timeout-minutes: 1000
-    strategy:
-      fail-fast: false
-      matrix:
-        flash-attn-version: ["2.4.3", "2.5.9", "2.6.3", "2.7.4"]
-        python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.3.1", "2.4.1", "2.5.1", "2.6.0", "2.7.0"]
-        # https://developer.nvidia.com/cuda-toolkit-archive
-        cuda-version: ["11.8.0", "12.4.1"]
-        exclude:
-          # torch < 2.2 does not support Python 3.12
-          - python-version: "3.12"
-            torch-version: "2.0.1"
-          - python-version: "3.12"
-            torch-version: "2.1.2"
-          # torch 2.0.1 does not support CUDA 12.x
-          - torch-version: "2.0.1"
-            cuda-version: "12.1.1"
-          - torch-version: "2.0.1"
-            cuda-version: "12.4.1"
-          - torch-version: "2.0.1"
-            cuda-version: "12.6.3"
-          - torch-version: "2.0.1"
-            cuda-version: "12.8.1"
-          # torch 2.7.0 does not support CUDA 12.4
-          - torch-version: "2.7.0"
-            cuda-version: "12.4.1"
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Enable Git long paths
-        run: git config --system core.longpaths true
-        shell: pwsh
-
-      - name: Install VS2022 BuildTools 17.9.7
-        run: choco install -y visualstudio2022buildtools --version=117.9.7.0 --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --installChannelUri https://aka.ms/vs/17/release/180911598_-255012421/channel"
-        shell: pwsh
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - uses: Jimver/cuda-toolkit@master
-        with:
-          cuda: ${{ matrix.cuda-version }}
-          method: "network"
-
-      - name: Set CUDA and PyTorch versions
-        run: |
-          $cudaVersion = "${{ matrix.cuda-version }}" -replace '\.', ''
-          $cudaVersion = $cudaVersion.Substring(0, [Math]::Min(3, $cudaVersion.Length))
-          echo "MATRIX_CUDA_VERSION=$cudaVersion" >> $env:GITHUB_ENV
-          $torchVersion = "${{ matrix.torch-version }}" -replace '^(\d+\.\d+).*', '$1'
-          echo "MATRIX_TORCH_VERSION=$torchVersion" >> $env:GITHUB_ENV
-        shell: pwsh
-
-      - name: Install build dependencies
-        run: |
-          pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil ninja
-        shell: pwsh
-
-      - name: Install PyTorch ${{ matrix.torch-version }}+cu${{ matrix.cuda-version }}
-        run: |
-          $env:TORCH_CUDA_VERSION = python -c "from os import environ as env; support_cuda_versions = { '2.0': [117, 118], '2.1': [118, 121], '2.2': [118, 121], '2.3': [118, 121], '2.4': [118, 121, 124], '2.5': [118, 121, 124], '2.6': [118, 124, 126], '2.7': [118, 126, 128], '2.8': [128], }; target_cuda_versions = support_cuda_versions[env['MATRIX_TORCH_VERSION']]; cuda_version = int(env['MATRIX_CUDA_VERSION']); closest_version = min(target_cuda_versions, key=lambda x: abs(x - cuda_version)); print(closest_version)"
-
-          if ("${{ matrix.torch-version }}" -like "*dev*") {
-            pip install --pre torch==${{ matrix.torch-version }} --index-url https://download.pytorch.org/whl/nightly/cu$env:TORCH_CUDA_VERSION
-          } else {
-            pip install --no-cache-dir torch==${{ matrix.torch-version }} --index-url https://download.pytorch.org/whl/cu$env:TORCH_CUDA_VERSION
-          }
-
-          nvcc --version
-          python -V
-          python -c "import torch; print('PyTorch:', torch.__version__)"
-          python -c "import torch; print('CUDA:', torch.version.cuda)"
-          python -c "from torch.utils import cpp_extension; print(cpp_extension.CUDA_HOME)"
-        shell: pwsh
-
-      - name: Checkout flash-attn
-        run: |
-          git clone https://github.com/Dao-AILab/flash-attention.git -b "v${{ matrix.flash-attn-version }}"
-        shell: pwsh
-
-      - name: Build wheels
-        timeout-minutes: 800
-        run: |
-          Import-Module 'C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\Microsoft.VisualStudio.DevShell.dll'
-          Enter-VsDevShell -VsInstallPath 'C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools' -DevCmdArguments '-arch=x64 -host_arch=x64'
-          $env:DISTUTILS_USE_SDK = 1
-          $env:BUILD_TARGET = "cuda"
-
-          $env:MAX_JOBS = "2"
-          $env:NVCC_THREADS = "2"
-          $env:FLASH_ATTENTION_FORCE_BUILD = "TRUE"
-
-          cd flash-attention
-          python setup.py bdist_wheel --dist-dir=dist
-          $baseWheelName = Get-ChildItem -Path "dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
-          $wheelName = $baseWheelName.Replace("${{ matrix.flash-attn-version }}", "${{ matrix.flash-attn-version }}+cu$env:MATRIX_CUDA_VERSION" + "torch$env:MATRIX_TORCH_VERSION")
-          Move-Item "dist\$baseWheelName" "dist\$wheelName"
-          echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
-        shell: pwsh
-
-      - name: Install Test
-        run: |
-          pip install flash-attention/dist/$env:wheel_name
-          python -c "import flash_attn; print(flash_attn.__version__)"
-        shell: pwsh
-
-      - name: Get the tag version
-        id: extract_branch
-        shell: bash
-        run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-
-      - name: Get Release with Tag
-        id: get_release
-        uses: joutvhu/get-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.extract_branch.outputs.branch }}
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: flash-attention/dist/${{ env.wheel_name }}
-          asset_name: ${{ env.wheel_name }}
-          asset_content_type: application/*
