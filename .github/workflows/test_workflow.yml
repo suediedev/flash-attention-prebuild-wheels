@@ -65,7 +65,7 @@ jobs:
       - uses: Jimver/cuda-toolkit@master
         with:
           cuda: ${{ matrix.cuda-version }}
-          linux-local-args: '["--toolkit"]'
+          sub-packages: '["nvcc", "toolkit"]'
           method: "network"
 
       - name: Install build dependencies
@@ -73,7 +73,7 @@ jobs:
           sudo apt install -y ninja-build clang
           pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
 
-      - name: Set CUDA and PyTorch versions and environment variables
+      - name: Set environment variables
         run: |
           export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
           export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
@@ -119,128 +119,128 @@ jobs:
   # #########################################################
   # Build wheels with self-hosted runner
   # #########################################################
-  build_wheels_self_hosted:
-    name: Build wheels
-    runs-on: self-hosted
-    container:
-      image: ubuntu:22.04
-    defaults:
-      run:
-        shell: bash
-    env:
-      DEBIAN_FRONTEND: noninteractive
-      TERM: xterm-256color
-    timeout-minutes: 1000
-    strategy:
-      fail-fast: false
-      matrix:
-        flash-attn-version: ["2.7.4"]
-        python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.8.0.dev20250523"]
-        # https://developer.nvidia.com/cuda-toolkit-archive
-        cuda-version: ["12.8.1"]
-        exclude:
-          # torch < 2.2 does not support Python 3.12
-          - python-version: "3.12"
-            torch-version: "2.0.1"
-          - python-version: "3.12"
-            torch-version: "2.1.2"
-          # torch 2.0.1 does not support CUDA 12.x
-          - torch-version: "2.0.1"
-            cuda-version: "12.1.1"
-          - torch-version: "2.0.1"
-            cuda-version: "12.4.1"
-          - torch-version: "2.0.1"
-            cuda-version: "12.6.3"
-          - torch-version: "2.0.1"
-            cuda-version: "12.8.1"
-          # torch 2.7.0 does not support CUDA 12.4
-          - torch-version: "2.7.0"
-            cuda-version: "12.4.1"
+  # build_wheels_self_hosted:
+  #   name: Build wheels
+  #   runs-on: self-hosted
+  #   container:
+  #     image: ubuntu:22.04
+  #   defaults:
+  #     run:
+  #       shell: bash
+  #   env:
+  #     DEBIAN_FRONTEND: noninteractive
+  #     TERM: xterm-256color
+  #   timeout-minutes: 1000
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       flash-attn-version: ["2.7.4"]
+  #       python-version: ["3.10", "3.11", "3.12"]
+  #       torch-version: ["2.8.0.dev20250523"]
+  #       # https://developer.nvidia.com/cuda-toolkit-archive
+  #       cuda-version: ["12.8.1"]
+  #       exclude:
+  #         # torch < 2.2 does not support Python 3.12
+  #         - python-version: "3.12"
+  #           torch-version: "2.0.1"
+  #         - python-version: "3.12"
+  #           torch-version: "2.1.2"
+  #         # torch 2.0.1 does not support CUDA 12.x
+  #         - torch-version: "2.0.1"
+  #           cuda-version: "12.1.1"
+  #         - torch-version: "2.0.1"
+  #           cuda-version: "12.4.1"
+  #         - torch-version: "2.0.1"
+  #           cuda-version: "12.6.3"
+  #         - torch-version: "2.0.1"
+  #           cuda-version: "12.8.1"
+  #         # torch 2.7.0 does not support CUDA 12.4
+  #         - torch-version: "2.7.0"
+  #           cuda-version: "12.4.1"
 
-    steps:
-      - name: Install tools
-        shell: bash
-        run: |
-          apt-get update && apt-get install -y --no-install-recommends \
-            curl \
-            ca-certificates \
-            sudo \
-            software-properties-common \
-            wget \
-            unzip \
-            zip \
-            git \
-            build-essential \
-            gcc \
-            g++ \
-            clang \
-            ninja-build \
-            keyboard-configuration
+  #   steps:
+  #     - name: Install tools
+  #       shell: bash
+  #       run: |
+  #         apt-get update && apt-get install -y --no-install-recommends \
+  #           curl \
+  #           ca-certificates \
+  #           sudo \
+  #           software-properties-common \
+  #           wget \
+  #           unzip \
+  #           zip \
+  #           git \
+  #           build-essential \
+  #           gcc \
+  #           g++ \
+  #           clang \
+  #           ninja-build \
+  #           keyboard-configuration
 
-      - uses: actions/checkout@v4
+  #     - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
+  #     - uses: actions/setup-python@v5
+  #       with:
+  #         python-version: ${{ matrix.python-version }}
 
-      - uses: Jimver/cuda-toolkit@master
-        env:
-          DEBIAN_FRONTEND: noninteractive
-        with:
-          cuda: ${{ matrix.cuda-version }}
-          linux-local-args: '["--toolkit"]'
-          method: "network"
+  #     - uses: Jimver/cuda-toolkit@master
+  #       env:
+  #         DEBIAN_FRONTEND: noninteractive
+  #       with:
+  #         cuda: ${{ matrix.cuda-version }}
+  #         sub-packages: '["nvcc", "toolkit"]'
+  #         method: "network"
 
-      - name: Install build dependencies
-        run: |
-          pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
+  #     - name: Install build dependencies
+  #       run: |
+  #         pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
 
-          - name: Set CUDA and PyTorch versions and environment variables
-          run: |
-            export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
-            export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-            export MAX_JOBS=2
-            export NVCC_THREADS=2
-            export FLASH_ATTENTION_FORCE_BUILD=TRUE
+  #     - name: Set environment variables
+  #       run: |
+  #         export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
+  #         export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+  #         export MAX_JOBS=2
+  #         export NVCC_THREADS=2
+  #         export FLASH_ATTENTION_FORCE_BUILD=TRUE
 
-      - name: Build wheels
-        timeout-minutes: 800
-        run: |
-          chmod +x build_linux.sh
-          ./build_linux.sh ${{ matrix.flash-attn-version }} ${{ matrix.python-version }} ${{ matrix.torch-version }} ${{ matrix.cuda-version }}
-          wheel_name=$(basename $(ls flash-attention/dist/*.whl | head -n 1))
-          echo "wheel_name=$wheel_name" >> $GITHUB_ENV
+  #     - name: Build wheels
+  #       timeout-minutes: 800
+  #       run: |
+  #         chmod +x build_linux.sh
+  #         ./build_linux.sh ${{ matrix.flash-attn-version }} ${{ matrix.python-version }} ${{ matrix.torch-version }} ${{ matrix.cuda-version }}
+  #         wheel_name=$(basename $(ls flash-attention/dist/*.whl | head -n 1))
+  #         echo "wheel_name=$wheel_name" >> $GITHUB_ENV
 
-      - name: Install Test
-        run: |
-          pip install flash-attention/dist/${{ env.wheel_name }}
-          python -c "import flash_attn; print(flash_attn.__version__)"
+  #     - name: Install Test
+  #       run: |
+  #         pip install flash-attention/dist/${{ env.wheel_name }}
+  #         python -c "import flash_attn; print(flash_attn.__version__)"
 
-      - name: Get the tag version
-        id: extract_branch
-        shell: bash
-        run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+  #     - name: Get the tag version
+  #       id: extract_branch
+  #       shell: bash
+  #       run: echo "branch=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
-      - name: Get Release with Tag
-        id: get_release
-        uses: joutvhu/get-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.extract_branch.outputs.branch }}
+  #     - name: Get Release with Tag
+  #       id: get_release
+  #       uses: joutvhu/get-release@v1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         tag_name: ${{ steps.extract_branch.outputs.branch }}
 
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: flash-attention/dist/${{ env.wheel_name }}
-          asset_name: ${{ env.wheel_name }}
-          asset_content_type: application/*
+  #     - name: Upload Release Asset
+  #       uses: actions/upload-release-asset@v1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         upload_url: ${{ steps.get_release.outputs.upload_url }}
+  #         asset_path: flash-attention/dist/${{ env.wheel_name }}
+  #         asset_name: ${{ env.wheel_name }}
+  #         asset_content_type: application/*
 
-      - name: Clean up
-        if: always()
-        run: |
-          sudo rm -rf /opt/hostedtoolcache/Python/${{ matrix.python-version }}*
+  #     - name: Clean up
+  #       if: always()
+  #       run: |
+  #         sudo rm -rf /opt/hostedtoolcache/Python/${{ matrix.python-version }}*
