@@ -93,6 +93,8 @@ jobs:
           cuda: ${{ matrix.cuda-version }}
           sub-packages: '["nvcc", "toolkit"]'
           method: "network"
+          use-github-cache: false
+          use-local-cache: false
 
       - name: Install build dependencies
         run: |
@@ -222,6 +224,8 @@ jobs:
           cuda: ${{ matrix.cuda-version }}
           sub-packages: '["nvcc", "toolkit"]'
           method: "network"
+          use-github-cache: false
+          use-local-cache: false
 
       - name: Install build dependencies
         run: |
@@ -308,6 +312,8 @@ jobs:
         with:
           cuda: ${{ matrix.cuda-version }}
           method: "network"
+          use-github-cache: false
+          use-local-cache: false
 
       - name: Set CUDA and PyTorch versions
         run: |
