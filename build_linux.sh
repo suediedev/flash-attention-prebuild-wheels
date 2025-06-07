@@ -65,7 +65,7 @@ git clone https://github.com/Dao-AILab/flash-attention.git -b "v$FLASH_ATTN_VERS
 # Build wheels
 echo "Building wheels..."
 cd flash-attention
-python setup.py bdist_wheel --dist-dir=dist
+FLASH_ATTENTION_FORCE_BUILD=TRUE python setup.py bdist_wheel --dist-dir=dist
 base_wheel_name=$(basename $(ls dist/*.whl | head -n 1))
 wheel_name=$(echo $base_wheel_name | sed "s/$FLASH_ATTN_VERSION/$FLASH_ATTN_VERSION+cu${MATRIX_CUDA_VERSION}torch${MATRIX_TORCH_VERSION}/")
 mv dist/$base_wheel_name dist/$wheel_name
