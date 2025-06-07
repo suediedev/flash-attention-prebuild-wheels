@@ -36,8 +36,10 @@ TORCH_CUDA_VERSION=$(python -c "from os import environ as env; \
         '2.7': [118, 126, 128], \
         '2.8': [128], \
     }; \
-    target_cuda_versions = support_cuda_versions[env['MATRIX_TORCH_VERSION']]; \
-    cuda_version = int(env['MATRIX_CUDA_VERSION']); \
+    matrix_cuda_version = '$MATRIX_CUDA_VERSION'; \
+    matrix_torch_version = '$MATRIX_TORCH_VERSION'; \
+    target_cuda_versions = support_cuda_versions[matrix_torch_version]; \
+    cuda_version = int(matrix_cuda_version); \
     closest_version = min(target_cuda_versions, key=lambda x: abs(x - cuda_version)); \
     print(closest_version) \
 ")
