@@ -27,7 +27,7 @@ jobs:
 
           | Flash-Attention | Python | PyTorch | CUDA |
           | --- | --- | --- | --- |
-          | 2.4.3, 2.5.9, 2.6.3, 2.7.4 | 3.10, 3.11, 3.12 | 2.4.1, 2.5.1, 2.6.0, 2.7.1 | 12.4.1, 12.8.1 |"
+          | 2.5.9, 2.6.3, 2.7.4 | 3.10, 3.11, 3.12 | 2.4.1, 2.5.1, 2.6.0, 2.7.1 | 12.4.1, 12.8.1 |"
 
   # #########################################################
   # Build wheels with GitHub hosted runner
@@ -125,20 +125,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
-          $wheel_path = "flash-attention/dist/$env:wheel_name"
+          tag_name=${{ github.ref_name }}
+          wheel_path="flash-attention/dist/${{ env.wheel_name }}"
 
           # Check if the file exists
-          if (-not (Test-Path $wheel_path)) {
-            Write-Host "Error: Wheel file not found at $wheel_path"
+          if [ ! -f "$wheel_path" ]; then
+            echo "Error: Wheel file not found at $wheel_path"
             exit 1
-          }
+          fi
 
           # Upload the release asset using GitHub CLI
           gh release upload "$tag_name" "$wheel_path" --clobber
 
-          Write-Host "Successfully uploaded $env:wheel_name to release $tag_name"
-        shell: pwsh
+          echo "Successfully uploaded $wheel_name to release $tag_name"
 
   # #########################################################
   # Build wheels with self-hosted runner
@@ -203,6 +202,7 @@ jobs:
             keyboard-configuration
 
       - name: Install gh
+        shell: bash
         run: |
           sudo mkdir -p -m 755 /etc/apt/keyrings
           out=$(mktemp)
@@ -228,11 +228,13 @@ jobs:
           use-local-cache: false
 
       - name: Install build dependencies
+        shell: bash
         run: |
           sudo apt install -y ninja-build clang
           pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
 
       - name: Set environment variables
+        shell: bash
         run: |
           export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
           export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
@@ -241,6 +243,7 @@ jobs:
 
       - name: Build wheels
         timeout-minutes: 800
+        shell: bash
         run: |
           chmod +x build_linux.sh
           ./build_linux.sh ${{ matrix.flash-attn-version }} ${{ matrix.python-version }} ${{ matrix.torch-version }} ${{ matrix.cuda-version }}
@@ -248,30 +251,32 @@ jobs:
           echo "wheel_name=$wheel_name" >> $GITHUB_ENV
 
       - name: Install Test
+        shell: bash
         run: |
           pip install flash-attention/dist/${{ env.wheel_name }}
           python -c "import flash_attn; print(flash_attn.__version__)"
 
       - name: Upload Release Asset
+        shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
-          $wheel_path = "flash-attention/dist/$env:wheel_name"
+          tag_name=${{ github.ref_name }}
+          wheel_path="flash-attention/dist/${{ env.wheel_name }}"
 
           # Check if the file exists
-          if (-not (Test-Path $wheel_path)) {
-            Write-Host "Error: Wheel file not found at $wheel_path"
+          if [ ! -f "$wheel_path" ]; then
+            echo "Error: Wheel file not found at $wheel_path"
             exit 1
-          }
+          fi
 
           # Upload the release asset using GitHub CLI
           gh release upload "$tag_name" "$wheel_path" --clobber
 
-          Write-Host "Successfully uploaded $env:wheel_name to release $tag_name"
-        shell: pwsh
+          echo "Successfully uploaded $wheel_name to release $tag_name"
 
       - name: Clean up
+        shell: bash
         if: always()
         run: |
           sudo rm -rf /opt/hostedtoolcache/Python/${{ matrix.python-version }}*
@@ -283,7 +288,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flash-attn-version: ["2.4.3", "2.5.9", "2.6.3", "2.7.4"]
+        flash-attn-version: ["2.5.9", "2.6.3", "2.7.4"]
         python-version: ["3.10", "3.11", "3.12"]
         torch-version: ["2.4.1", "2.5.1", "2.6.0", "2.7.1"]
         # https://developer.nvidia.com/cuda-toolkit-archive
