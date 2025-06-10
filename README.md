@@ -38,6 +38,24 @@ pip install ./flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 
 ## Packages
 
+### v0.3.9
+
+[Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9)
+
+#### Linux x86_64
+
+| Flash-Attention | Python | PyTorch | CUDA |
+| --- | --- | --- | --- |
+| 2.4.3, 2.5.9, 2.6.3 | 3.10, 3.11, 3.12 | 2.7.1 | 12.8.1 |
+
+#### Windows x86_64
+
+| Flash-Attention | Python | PyTorch | CUDA |
+| --- | --- | --- | --- |
+| 2.5.9, 2.6.3, 2.7.4 | 3.10, 3.11, 3.12 | 2.4.1, 2.5.1, 2.6.0 | 12.4.1, 12.8.1 |
+
+> [!IMPORTANT]
+> ⚠️ Building flash-attn v2.7.4 with CUDA 12.8 on Windows cannot be completed because of GitHub Actions’ processing-time limits. In the future, I plan to add a self-hosted Windows runner to resolve this issue.
 
 ### v0.3.1
 
