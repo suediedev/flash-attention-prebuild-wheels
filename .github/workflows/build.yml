@@ -342,7 +342,7 @@ jobs:
         run: |
           choco install -y visualstudio2022buildtools `
             --version=117.14.1 `
-            --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
+            --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --add Microsoft.VisualStudio.Component.Windows11SDK.22000"
 
       - name: Install build dependencies
         shell: pwsh
