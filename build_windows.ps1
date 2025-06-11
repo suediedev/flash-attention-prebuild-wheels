@@ -35,9 +35,9 @@ Write-Host "Installing PyTorch $TorchVersion+cu$CudaVersion..."
 $env:TORCH_CUDA_VERSION = python -c "from os import environ as env; support_cuda_versions = { '2.1': [121], '2.2': [121], '2.3': [121], '2.4': [121, 124], '2.5': [121, 124], '2.6': [124, 126], '2.7': [126, 128], '2.8': [128], }; target_cuda_versions = support_cuda_versions['$MatrixTorchVersion']; cuda_version = int('$MatrixCudaVersion'); closest_version = min(target_cuda_versions, key=lambda x: abs(x - cuda_version)); print(closest_version)"
 
 if ($TorchVersion -like "*dev*") {
-    pip install --pre torch=$TorchVersion --index-url https://download.pytorch.org/whl/nightly/cu$env:TORCH_CUDA_VERSION
+    pip install --pre torch==$TorchVersion --index-url https://download.pytorch.org/whl/nightly/cu$env:TORCH_CUDA_VERSION
 } else {
-    pip install --no-cache-dir torch=$TorchVersion --index-url https://download.pytorch.org/whl/cu$env:TORCH_CUDA_VERSION
+    pip install --no-cache-dir torch==$TorchVersion --index-url https://download.pytorch.org/whl/cu$env:TORCH_CUDA_VERSION
 }
 
 # Verify installation
