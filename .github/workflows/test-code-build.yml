@@ -8,8 +8,8 @@ jobs:
     # runs-on: windows-latest
     runs-on: codebuild-flash-attention-pre-build-wheel-windows-${{ github.run_id }}-${{ github.run_attempt }}
     env:
-      MAX_JOBS: 4
-      NVCC_THREADS: 4
+      MAX_JOBS: 2
+      NVCC_THREADS: 2
     steps:
       - uses: actions/checkout@v4
       - name: Enable Git long paths
@@ -22,7 +22,7 @@ jobs:
 
       - uses: Jimver/cuda-toolkit@v0.2.24
         with:
-          cuda: "12.4.1"
+          cuda: "12.8.1"
           method: "network"
           use-github-cache: false
           use-local-cache: false
@@ -42,7 +42,7 @@ jobs:
       - name: Build wheels
         shell: pwsh
         run: |
-          .\build_windows.ps1 -FlashAttnVersion "2.5.9" -PythonVersion "3.11" -TorchVersion "2.6.0" -CudaVersion "12.4.1"
+          .\build_windows.ps1 -FlashAttnVersion "2.7.4" -PythonVersion "3.11" -TorchVersion "2.7.1" -CudaVersion "12.8.1"
           $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
           echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
 
