@@ -1,0 +1,29 @@
+name: "Test Code build"
+on:
+  workflow_dispatch:
+
+jobs:
+  build_wheels:
+    name: Build wheels and Upload
+    # runs-on: windows-latest
+    runs-on: codebuild-flash-attention-pre-build-wheel-windows-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Git long paths
+        run: git config --system core.longpaths true
+        shell: pwsh
+
+      - name: Install VS2022 BuildTools 17.9.7
+        run: choco install -y visualstudio2022buildtools --version=117.9.7.0 --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --installChannelUri https://aka.ms/vs/17/release/180911598_-255012421/channel"
+        shell: pwsh
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - uses: Jimver/cuda-toolkit@master
+        with:
+          cuda: ${{ matrix.cuda-version }}
+          method: "network"
+
