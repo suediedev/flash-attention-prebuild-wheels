@@ -7,9 +7,6 @@ jobs:
     name: Build wheels and Upload
     # runs-on: windows-latest
     runs-on: codebuild-flash-attention-pre-build-wheel-windows-${{ github.run_id }}-${{ github.run_attempt }}
-    env:
-      MAX_JOBS: 4
-      NVCC_THREADS: 2
     steps:
       - uses: actions/checkout@v4
       - name: Enable Git long paths
@@ -30,7 +27,7 @@ jobs:
       - name: Install VisualStudio BuildTools
         shell: pwsh
         run: |
-          choco install -y visualstudio2022buildtools 
+          choco install -y visualstudio2022buildtools `
             --version=117.14.1 --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --includeRecommended --includeOptional"
 
       - name: Install build dependencies
@@ -40,6 +37,9 @@ jobs:
 
       - name: Build wheels
         shell: pwsh
+        env:
+          MAX_JOBS: 4
+          NVCC_THREADS: 2
         run: |
           .\build_windows.ps1 -FlashAttnVersion "2.7.4" -PythonVersion "3.11" -TorchVersion "2.7.1" -CudaVersion "12.8.1"
           $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
