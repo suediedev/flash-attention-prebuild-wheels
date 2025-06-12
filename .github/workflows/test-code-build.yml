@@ -27,14 +27,11 @@ jobs:
           use-github-cache: false
           use-local-cache: false
 
-      - name: Install Windows SDK and BuildTools
+      - name: Install VisualStudio BuildTools
         shell: pwsh
         run: |
-          choco install -y visualstudio2022buildtools `
-            --version=117.14.1 `
-            --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
-          choco install -y windows-sdk-10.1 visualstudio2022-workload-vctools
-          choco install -y vcredist-all
+          choco install -y visualstudio2022buildtools 
+            --version=117.14.1 --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --includeRecommended --includeOptional"
 
       - name: Install build dependencies
         shell: pwsh
