@@ -24,7 +24,7 @@ echo "  Torch Matrix: $MATRIX_TORCH_VERSION"
 
 # Install PyTorch
 echo "Installing PyTorch $TORCH_VERSION+cu$CUDA_VERSION..."
-TORCH_CUDA_VERSION=$(python -c "from os import environ as env; \
+TORCH_CUDA_VERSION=$(python -c "\
     support_cuda_versions = { \
         '2.0': [117, 118], \
         '2.1': [118, 121], \
@@ -36,18 +36,21 @@ TORCH_CUDA_VERSION=$(python -c "from os import environ as env; \
         '2.7': [118, 126, 128], \
         '2.8': [128], \
     }; \
-    matrix_cuda_version = '$MATRIX_CUDA_VERSION'; \
+    cuda_version = int('$MATRIX_CUDA_VERSION'); \
     matrix_torch_version = '$MATRIX_TORCH_VERSION'; \
     target_cuda_versions = support_cuda_versions[matrix_torch_version]; \
-    cuda_version = int(matrix_cuda_version); \
-    closest_version = min(target_cuda_versions, key=lambda x: abs(x - cuda_version)); \
+    target_cuda_versions = [v for v in target_cuda_versions if str(v)[:2] == str(cuda_version)[:2]]; \
+    if len(target_cuda_versions) == 0: \
+        closest_version = support_cuda_versions[matrix_torch_version][-1]; \
+    else: \
+        closest_version = min(target_cuda_versions, key=lambda x: abs(x - cuda_version)); \
     print(closest_version) \
 ")
 
 if [[ $TORCH_VERSION == *"dev"* ]]; then
-  pip install --pre torch==$TORCH_VERSION --index-url https://download.pytorch.org/whl/nightly/cu${TORCH_CUDA_VERSION}
+  pip install --force-reinstall --no-cache-dir --pre torch==$TORCH_VERSION --index-url https://download.pytorch.org/whl/nightly/cu${TORCH_CUDA_VERSION}
 else
-  pip install --no-cache-dir torch==$TORCH_VERSION --index-url https://download.pytorch.org/whl/cu${TORCH_CUDA_VERSION}
+  pip install --force-reinstall --no-cache-dir torch==$TORCH_VERSION --index-url https://download.pytorch.org/whl/cu${TORCH_CUDA_VERSION}
 fi
 
 # Verify installation

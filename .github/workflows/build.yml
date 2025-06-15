@@ -39,16 +39,14 @@ jobs:
     env:
       DEBIAN_FRONTEND: noninteractive
       TERM: xterm-256color
-      MAX_JOBS: 2
-      NVCC_THREADS: 2
     strategy:
       fail-fast: false
       matrix:
         flash-attn-version: ["2.8.0"]
         python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.4.1","2.5.1","2.6.0"]
+        torch-version: ["2.4.1", "2.5.1", "2.6.0"]
         # # https://developer.nvidia.com/cuda-toolkit-archive
-        cuda-version: ["12.1.1","12.4.1"]
+        cuda-version: ["12.1.1", "12.4.1"]
         exclude:
           # torch < 2.2 does not support Python 3.12
           - python-version: "3.12"
@@ -111,6 +109,9 @@ jobs:
           export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
       - name: Build wheels
+        env:
+          MAX_JOBS: 2
+          NVCC_THREADS: 2
         run: |
           chmod +x build_linux.sh
           ./build_linux.sh ${{ matrix.flash-attn-version }} ${{ matrix.python-version }} ${{ matrix.torch-version }} ${{ matrix.cuda-version }}
@@ -119,7 +120,7 @@ jobs:
 
       - name: Install Test
         run: |
-          pip install flash-attention/dist/${{ env.wheel_name }}
+          pip install --no-cache-dir --force-reinstall flash-attention/dist/${{ env.wheel_name }}
           python -c "import flash_attn; print(flash_attn.__version__)"
 
       - name: Upload Release Asset
@@ -155,15 +156,13 @@ jobs:
     env:
       DEBIAN_FRONTEND: noninteractive
       TERM: xterm-256color
-      MAX_JOBS: 2
-      NVCC_THREADS: 2
-    timeout-minutes: 1000
+    timeout-minutes: 2000
     strategy:
       fail-fast: false
       matrix:
         flash-attn-version: ["2.8.0"]
         python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.4.1","2.5.1","2.6.0","2.7.1"]
+        torch-version: ["2.4.1", "2.5.1", "2.6.0", "2.7.1"]
         # https://developer.nvidia.com/cuda-toolkit-archive
         cuda-version: ["12.8.1"]
         exclude:
@@ -251,8 +250,11 @@ jobs:
           export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
       - name: Build wheels
-        timeout-minutes: 800
+        timeout-minutes: 1200
         shell: bash
+        env:
+          MAX_JOBS: 4
+          NVCC_THREADS: 3
         run: |
           chmod +x build_linux.sh
           ./build_linux.sh ${{ matrix.flash-attn-version }} ${{ matrix.python-version }} ${{ matrix.torch-version }} ${{ matrix.cuda-version }}
@@ -262,7 +264,7 @@ jobs:
       - name: Install Test
         shell: bash
         run: |
-          pip install flash-attention/dist/${{ env.wheel_name }}
+          pip install --no-cache-dir --force-reinstall flash-attention/dist/${{ env.wheel_name }}
           python -c "import flash_attn; print(flash_attn.__version__)"
 
       - name: Upload Release Asset
@@ -288,7 +290,8 @@ jobs:
         shell: bash
         if: always()
         run: |
-          sudo rm -rf /opt/hostedtoolcache/Python/${{ matrix.python-version }}*
+          rm -rf /opt/hostedtoolcache/Python
+          rm -rf ~/.cache/pip
 
   # build_windows_wheels:
   #   name: Build wheels and Upload (Windows x86_64, GitHub hosted runner)
@@ -365,7 +368,7 @@ jobs:
   #     - name: Install Test
   #       shell: pwsh
   #       run: |
-  #         pip install flash-attention/dist/$env:wheel_name
+  #         pip install --no-cache-dir --force-reinstall flash-attention/dist/$env:wheel_name
   #         python -c "import flash_attn; print(flash_attn.__version__)"
 
   #     - name: Upload Release Asset
