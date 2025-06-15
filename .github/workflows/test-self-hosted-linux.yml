@@ -1,4 +1,4 @@
-name: Build wheels and upload to GitHub Releases
+name: Test self-hosted Linux build
 
 on:
   push:
