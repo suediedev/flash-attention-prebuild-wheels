@@ -22,12 +22,12 @@ jobs:
           | Flash-Attention | Python | PyTorch | CUDA |
           | --- | --- | --- | --- |
           | 2.8.0 | 3.10, 3.11, 3.12 | 2.4.1, 2.5.1, 2.6.0, 2.7.1 | 12.4.1, 12.8.1 |
+          "
+          # ## Windows x86_64
 
-          ## Windows x86_64
-
-          | Flash-Attention | Python | PyTorch | CUDA |
-          | --- | --- | --- | --- |
-          | 2.8.0 | 3.10, 3.11, 3.12 | 2.4.1, 2.5.1, 2.6.0, 2.7.1 | 12.4.1, 12.8.1 |"
+          # | Flash-Attention | Python | PyTorch | CUDA |
+          # | --- | --- | --- | --- |
+          # | 2.8.0 | 3.10, 3.11, 3.12 | 2.4.1, 2.5.1, 2.6.0, 2.7.1 | 12.4.1, 12.8.1 |
 
   # #########################################################
   # Build wheels with GitHub hosted runner
@@ -293,105 +293,105 @@ jobs:
         run: |
           rm -rf /opt/hostedtoolcache/Python
 
-  build_windows_wheels:
-    name: Build wheels and Upload (Windows x86_64, GitHub hosted runner)
-    runs-on: windows-latest
-    timeout-minutes: 1000
-    needs: create_releases
-    env:
-      MAX_JOBS: 2
-      NVCC_THREADS: 2
-    strategy:
-      fail-fast: false
-      matrix:
-        flash-attn-version: ["2.8.0"]
-        python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.4.1", "2.5.1", "2.6.0", "2.7.1"]
-        # https://developer.nvidia.com/cuda-toolkit-archive
-        # CUDA 11.8 cannot build flash-attn.
-        # https://github.com/Dao-AILab/flash-attention/issues/595
-        cuda-version: ["12.4.1", "12.8.1"]
-        exclude:
-          # torch < 2.2 does not support Python 3.12
-          - python-version: "3.12"
-            torch-version: "2.0.1"
-          - python-version: "3.12"
-            torch-version: "2.1.2"
-          # torch 2.0.1 does not support CUDA 12.x
-          - torch-version: "2.0.1"
-            cuda-version: "12.1.1"
-          - torch-version: "2.0.1"
-            cuda-version: "12.4.1"
-          - torch-version: "2.0.1"
-            cuda-version: "12.6.3"
-          - torch-version: "2.0.1"
-            cuda-version: "12.8.1"
-          # torch 2.7.0 does not support CUDA 12.4
-          - torch-version: "2.7.0"
-            cuda-version: "12.4.1"
-    steps:
-      - uses: actions/checkout@v4
+  # build_windows_wheels:
+  #   name: Build wheels and Upload (Windows x86_64, GitHub hosted runner)
+  #   runs-on: windows-latest
+  #   timeout-minutes: 1000
+  #   needs: create_releases
+  #   env:
+  #     MAX_JOBS: 2
+  #     NVCC_THREADS: 2
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       flash-attn-version: ["2.8.0"]
+  #       python-version: ["3.10", "3.11", "3.12"]
+  #       torch-version: ["2.4.1", "2.5.1", "2.6.0", "2.7.1"]
+  #       # https://developer.nvidia.com/cuda-toolkit-archive
+  #       # CUDA 11.8 cannot build flash-attn.
+  #       # https://github.com/Dao-AILab/flash-attention/issues/595
+  #       cuda-version: ["12.4.1", "12.8.1"]
+  #       exclude:
+  #         # torch < 2.2 does not support Python 3.12
+  #         - python-version: "3.12"
+  #           torch-version: "2.0.1"
+  #         - python-version: "3.12"
+  #           torch-version: "2.1.2"
+  #         # torch 2.0.1 does not support CUDA 12.x
+  #         - torch-version: "2.0.1"
+  #           cuda-version: "12.1.1"
+  #         - torch-version: "2.0.1"
+  #           cuda-version: "12.4.1"
+  #         - torch-version: "2.0.1"
+  #           cuda-version: "12.6.3"
+  #         - torch-version: "2.0.1"
+  #           cuda-version: "12.8.1"
+  #         # torch 2.7.0 does not support CUDA 12.4
+  #         - torch-version: "2.7.0"
+  #           cuda-version: "12.4.1"
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: Enable Git long paths
-        shell: pwsh
-        run: git config --system core.longpaths true
+  #     - name: Enable Git long paths
+  #       shell: pwsh
+  #       run: git config --system core.longpaths true
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
+  #     - uses: actions/setup-python@v5
+  #       with:
+  #         python-version: ${{ matrix.python-version }}
 
-      - uses: Jimver/cuda-toolkit@v0.2.24
-        with:
-          cuda: ${{ matrix.cuda-version }}
-          method: "network"
-          use-github-cache: false
-          use-local-cache: false
+  #     - uses: Jimver/cuda-toolkit@v0.2.24
+  #       with:
+  #         cuda: ${{ matrix.cuda-version }}
+  #         method: "network"
+  #         use-github-cache: false
+  #         use-local-cache: false
 
-      - name: Install VS2022 BuildTools
-        shell: pwsh
-        run: |
-          choco install -y visualstudio2022buildtools `
-            --version=117.14.1 `
-            --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
+  #     - name: Install VS2022 BuildTools
+  #       shell: pwsh
+  #       run: |
+  #         choco install -y visualstudio2022buildtools `
+  #           --version=117.14.1 `
+  #           --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
 
-      - name: Install build dependencies
-        shell: pwsh
-        run: |
-          pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil ninja
+  #     - name: Install build dependencies
+  #       shell: pwsh
+  #       run: |
+  #         pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil ninja
 
-      - name: Build wheels
-        shell: pwsh
-        run: |
-          .\build_windows.ps1 -FlashAttnVersion "${{ matrix.flash-attn-version }}" -PythonVersion "${{ matrix.python-version }}" -TorchVersion "${{ matrix.torch-version }}" -CudaVersion "${{ matrix.cuda-version }}"
-          $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
-          echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
+  #     - name: Build wheels
+  #       shell: pwsh
+  #       run: |
+  #         .\build_windows.ps1 -FlashAttnVersion "${{ matrix.flash-attn-version }}" -PythonVersion "${{ matrix.python-version }}" -TorchVersion "${{ matrix.torch-version }}" -CudaVersion "${{ matrix.cuda-version }}"
+  #         $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
+  #         echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
 
-      - name: Install Test
-        shell: pwsh
-        run: |
-          pip install --no-cache-dir flash-attention/dist/$env:wheel_name
-          python -c "import flash_attn; print(flash_attn.__version__)"
+  #     - name: Install Test
+  #       shell: pwsh
+  #       run: |
+  #         pip install --no-cache-dir flash-attention/dist/$env:wheel_name
+  #         python -c "import flash_attn; print(flash_attn.__version__)"
 
-      - name: Upload Release Asset
-        shell: pwsh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
-          $wheel_path = "flash-attention/dist/$env:wheel_name"
+  #     - name: Upload Release Asset
+  #       shell: pwsh
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       run: |
+  #         $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
+  #         $wheel_path = "flash-attention/dist/$env:wheel_name"
 
-          # Check if the file exists
-          if (-not (Test-Path $wheel_path)) {
-          $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
-          $wheel_path = "flash-attention/dist/$env:wheel_name"
+  #         # Check if the file exists
+  #         if (-not (Test-Path $wheel_path)) {
+  #         $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
+  #         $wheel_path = "flash-attention/dist/$env:wheel_name"
 
-          # Check if the file exists
-          if (-not (Test-Path $wheel_path)) {
-            Write-Host "Error: Wheel file not found at $wheel_path"
-            exit 1
-          }
+  #         # Check if the file exists
+  #         if (-not (Test-Path $wheel_path)) {
+  #           Write-Host "Error: Wheel file not found at $wheel_path"
+  #           exit 1
+  #         }
 
-          # Upload the release asset using GitHub CLI
-          gh release upload "$tag_name" "$wheel_path" --clobber
+  #         # Upload the release asset using GitHub CLI
+  #         gh release upload "$tag_name" "$wheel_path" --clobber
 
-          Write-Host "Successfully uploaded $env:wheel_name to release $tag_name"
+  #         Write-Host "Successfully uploaded $env:wheel_name to release $tag_name"
