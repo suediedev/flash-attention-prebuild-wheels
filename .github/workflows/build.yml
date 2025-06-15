@@ -297,6 +297,7 @@ jobs:
     name: Build wheels and Upload (Windows x86_64, GitHub hosted runner)
     runs-on: windows-latest
     timeout-minutes: 1000
+    needs: create_releases
     env:
       MAX_JOBS: 2
       NVCC_THREADS: 2
