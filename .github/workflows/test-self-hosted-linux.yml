@@ -1,9 +1,7 @@
 name: Test self-hosted Linux build
 
 on:
-  push:
-    tags:
-      - "v*"
+  workflow_dispatch:
 
 jobs:
   # #########################################################
