@@ -95,7 +95,7 @@ jobs:
         shell: bash
         env:
           MAX_JOBS: 4
-          NVCC_THREADS: 3
+          NVCC_THREADS: 4
         run: |
           chmod +x build_linux.sh
           ./build_linux.sh ${{ matrix.flash-attn-version }} ${{ matrix.python-version }} ${{ matrix.torch-version }} ${{ matrix.cuda-version }}
