@@ -253,8 +253,8 @@ jobs:
         timeout-minutes: 1200
         shell: bash
         env:
-          MAX_JOBS: 4
-          NVCC_THREADS: 4
+          MAX_JOBS: 2
+          NVCC_THREADS: 2
         run: |
           chmod +x build_linux.sh
           ./build_linux.sh ${{ matrix.flash-attn-version }} ${{ matrix.python-version }} ${{ matrix.torch-version }} ${{ matrix.cuda-version }}
