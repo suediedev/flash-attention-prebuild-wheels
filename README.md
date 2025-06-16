@@ -42,7 +42,7 @@ pip install ./flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 
 [Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12)
 
-## Linux x86_64
+#### Linux x86_64
 
 | Flash-Attention | Python | PyTorch | CUDA |
 | --- | --- | --- | --- |
