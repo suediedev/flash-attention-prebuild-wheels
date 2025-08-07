@@ -21,13 +21,13 @@ jobs:
 
           | Flash-Attention | Python | PyTorch | CUDA |
           | --- | --- | --- | --- |
-          | 2.8.1 | 3.10, 3.11, 3.12 | 2.4.1, 2.5.1, 2.6.0, 2.7.1 | 12.4.1, 12.8.1 |
+          | 2.6.3, 2.7.4, 2.8.2 | 3.10, 3.11, 3.12 | 2.5.1, 2.6.0, 2.7.1, 2.8.0 | 12.4.1, 12.8.1, 12.9.1 |
 
           ## Windows x86_64
 
           | Flash-Attention | Python | PyTorch | CUDA |
           | --- | --- | --- | --- |
-          | 2.8.1 | 3.10, 3.11, 3.12 | 2.4.1, 2.5.1, 2.6.0, 2.7.1 | 12.4.1, 12.8.1 |
+          | 2.6.3, 2.7.4, 2.8.2 | 3.10, 3.11, 3.12 | 2.5.1, 2.6.0, 2.7.1, 2.8.0 | 12.4.1, 12.8.1, 12.9.1 |
           "
 
   # #########################################################
@@ -43,11 +43,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flash-attn-version: ["2.8.1"]
+        flash-attn-version: ["2.6.3", "2.7.4", "2.8.2"]
         python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.4.1", "2.5.1", "2.6.0", "2.7.1"]
+        torch-version: ["2.5.1", "2.6.0", "2.7.1", "2.8.0"]
         # https://developer.nvidia.com/cuda-toolkit-archive
-        cuda-version: ["12.4.1", "12.8.1"]
+        cuda-version: ["12.4.1", "12.8.1", "12.9.1"]
         exclude:
           # torch < 2.2 does not support Python 3.12
           - python-version: "3.12"
@@ -69,6 +69,13 @@ jobs:
           # torch 2.7.0 does not support CUDA 12.4
           - torch-version: "2.7.0"
             cuda-version: "12.4.1"
+          # torch < 2.8 does not support CUDA 12.9
+          - torch-version: "2.5.1"
+            cuda-version: "12.9.1"
+          - torch-version: "2.6.3"
+            cuda-version: "12.9.1"
+          - torch-version: "2.7.1"
+            cuda-version: "12.9.1"
     steps:
       - uses: actions/checkout@v4
 
@@ -305,13 +312,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flash-attn-version: ["2.8.1"]
+        flash-attn-version: ["2.6.3", "2.7.4", "2.8.2"]
         python-version: ["3.10", "3.11", "3.12"]
-        torch-version: ["2.4.1", "2.5.1", "2.6.0", "2.7.1"]
+        torch-version: ["2.5.1", "2.6.0", "2.7.1", "2.8.0"]
         # https://developer.nvidia.com/cuda-toolkit-archive
-        # CUDA 11.8 cannot build flash-attn.
-        # https://github.com/Dao-AILab/flash-attention/issues/595
-        cuda-version: ["12.4.1", "12.8.1"]
+        cuda-version: ["12.4.1", "12.8.1", "12.9.1"]
         exclude:
           # torch < 2.2 does not support Python 3.12
           - python-version: "3.12"
@@ -327,9 +332,22 @@ jobs:
             cuda-version: "12.6.3"
           - torch-version: "2.0.1"
             cuda-version: "12.8.1"
+          # torch 2.6.0 does not support CUDA 12.1
+          - torch-version: "2.6.0"
+            cuda-version: "12.1.1"
           # torch 2.7.0 does not support CUDA 12.4
           - torch-version: "2.7.0"
             cuda-version: "12.4.1"
+          # flash-attn 2.7.4 does not build with CUDA 12.8
+          - flash-attn-version: "2.7.4"
+            cuda-version: "12.8.1"
+          # torch < 2.8 does not support CUDA 12.9
+          - torch-version: "2.5.1"
+            cuda-version: "12.9.1"
+          - torch-version: "2.6.3"
+            cuda-version: "12.9.1"
+          - torch-version: "2.7.1"
+            cuda-version: "12.9.1"
     steps:
       - uses: actions/checkout@v4
 
