@@ -359,7 +359,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - uses: Jimver/cuda-toolkit@v0.2.24
+      - uses: Jimver/cuda-toolkit@v0.2.26
         with:
           cuda: ${{ matrix.cuda-version }}
           method: "network"
