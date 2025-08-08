@@ -27,7 +27,7 @@ jobs:
 
           | Flash-Attention | Python | PyTorch | CUDA |
           | --- | --- | --- | --- |
-          | 2.6.3, 2.7.4, 2.8.2 | 3.10, 3.11, 3.12 | 2.5.1, 2.6.0, 2.7.1, 2.8.0 | 12.4.1, 12.8.1, 12.9.1 |
+          | 2.6.3, 2.7.4, 2.8.2 | 3.10, 3.11, 3.12 | 2.5.1, 2.6.0, 2.7.1, 2.8.0 | 12.4.1, 12.8.1 |
           "
 
   # #########################################################
@@ -326,7 +326,7 @@ jobs:
         python-version: ["3.10", "3.11", "3.12"]
         torch-version: ["2.5.1", "2.6.0", "2.7.1", "2.8.0"]
         # https://developer.nvidia.com/cuda-toolkit-archive
-        cuda-version: ["12.4.1", "12.8.1", "12.9.1"]
+        cuda-version: ["12.4.1", "12.8.1"]
         exclude:
           # torch < 2.2 does not support Python 3.12
           - python-version: "3.12"
@@ -369,7 +369,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - uses: Jimver/cuda-toolkit@master
+      - uses: Jimver/cuda-toolkit@v0.2.24
         with:
           cuda: ${{ matrix.cuda-version }}
           method: "network"
