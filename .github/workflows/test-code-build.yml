@@ -25,6 +25,11 @@ jobs:
           use-github-cache: false
           use-local-cache: false
 
+      - name: Install winget
+        shell: pwsh
+        run: |
+          choco install -y winget
+
       - name: Install VisualStudio BuildTools
         shell: pwsh
         timeout-minutes: 1200
