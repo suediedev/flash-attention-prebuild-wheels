@@ -28,19 +28,20 @@ jobs:
       - name: Install VisualStudio BuildTools
         shell: pwsh
         timeout-minutes: 1200
+        # choco install -y visualstudio2022buildtools `
+        #   --version=117.14.1 --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --includeRecommended --includeOptional"
         run: |
-          choco install -y visualstudio2022buildtools `
-            --version=117.14.1 --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --includeRecommended --includeOptional"
+          winget install --id=Microsoft.VisualStudio.2022.BuildTools  -e
 
       - name: Install CMake
         shell: pwsh
         run: |
-          choco install -y cmake
+          winget install CMake
 
       - name: Install Windows Sdk
         shell: pwsh
         run: |
-          choco install -y windows-sdk-10.1
+          winget install --source winget --exact --id Microsoft.WindowsSDK.10.0.26100
 
       - name: Install build dependencies
         shell: pwsh
