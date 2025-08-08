@@ -313,7 +313,7 @@ jobs:
 
   build_windows_wheels:
     name: Build wheels and Upload (Windows x86_64, GitHub hosted runner)
-    runs-on: windows-latest
+    runs-on: windows-2022
     timeout-minutes: 1000
     needs: create_releases
     env:
