@@ -48,674 +48,818 @@ pip install ./flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 
 ### Linux x86_64
 
-| Flash-Attention | Python | PyTorch | CUDA | package |
-| --------------- | ------ | ------- | ---- | ------- |
-| 2.8.2 | 3.12 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.2 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.8.1 | 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.12 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.12 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.12 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.11 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.11 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.11 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.10 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.10 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.1 | 3.10 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
-| 2.8.0 | 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.12 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.12 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.12 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.12 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.11 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.11 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.11 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.11 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.10 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.10 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.10 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.10 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.8.0 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
-| 2.7.4 | 3.12 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1) |
-| 2.7.4 | 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.10) |
-| 2.7.4 | 3.12 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0) |
-| 2.7.4 | 3.11 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1) |
-| 2.7.4 | 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.10) |
-| 2.7.4 | 3.11 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0) |
-| 2.7.4 | 3.10 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1) |
-| 2.7.4 | 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.10) |
-| 2.7.4 | 3.10 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0) |
-| 2.7.4.post1 | 3.12 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.12 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.12 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.12 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.12 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.12 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.12 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.11 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.11 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.11 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.11 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.11 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.11 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.10 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.10 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.10 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.10 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.10 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.7.4.post1 | 3.10 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.4.post1 | 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.7.3 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.3 | 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
-| 2.7.2.post1 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.2.post1 | 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
-| 2.7.0.post2 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.7.0.post2 | 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.12 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.12 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.12 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
-| 2.6.3 | 3.12 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.12 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.12 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
-| 2.6.3 | 3.12 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.12 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.12 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.12 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.12 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.12 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.12 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.12 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.12 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.12 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release5](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.11 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.11 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.11 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
-| 2.6.3 | 3.11 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.11 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.11 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
-| 2.6.3 | 3.11 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.11 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.11 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.11 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.11 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.11 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.11 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.11 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.11 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.11 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release5](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.10 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.10 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.10 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
-| 2.6.3 | 3.10 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.10 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.10 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
-| 2.6.3 | 3.10 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.10 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.10 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.10 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.10 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.10 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.10 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.6.3 | 3.10 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.10 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
-| 2.6.3 | 3.10 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release5](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
-| 2.6.3 | 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.6.3 | 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.9 | 3.12 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
-| 2.5.9 | 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.12 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
-| 2.5.9 | 3.12 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.12 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.12 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.12 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.12 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.12 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.12 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.12 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.12 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.11 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
-| 2.5.9 | 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.11 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
-| 2.5.9 | 3.11 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.11 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.11 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.11 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.11 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.11 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.11 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.11 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.11 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.10 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
-| 2.5.9 | 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.10 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
-| 2.5.9 | 3.10 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.10 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.10 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.10 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.10 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.10 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.10 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.5.9 | 3.10 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.10 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.9 | 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.5.6 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.5.6 | 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
-| 2.4.3 | 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.4.3 | 3.12 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
-| 2.4.3 | 3.12 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.12 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.12 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.12 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.12 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.12 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
-| 2.4.3 | 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.4.3 | 3.11 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
-| 2.4.3 | 3.11 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.11 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.11 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.11 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.11 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.11 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
-| 2.4.3 | 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.4.3 | 3.10 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
-| 2.4.3 | 3.10 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.10 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.10 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.10 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.10 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
-| 2.4.3 | 3.10 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
-| 2.4.3 | 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
-| 2.4.3 | 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+#### Flash-Attention 2.8.2
+
+<details>
+<summary>Packages for Flash-Attention 2.8.2</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+
+</details>
+
+#### Flash-Attention 2.8.1
+
+<details>
+<summary>Packages for Flash-Attention 2.8.1</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.12 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.12 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.12 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.11 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.11 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.11 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.10 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.10 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+| 3.10 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.13) |
+
+</details>
+
+#### Flash-Attention 2.8.0
+
+<details>
+<summary>Packages for Flash-Attention 2.8.0</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.12 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.12 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.12 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.12 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.11 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.11 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.11 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.11 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.10 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.10 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.10 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.10 | 2.4.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.12) |
+
+</details>
+
+#### Flash-Attention 2.7.4
+
+<details>
+<summary>Packages for Flash-Attention 2.7.4</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1) |
+| 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.10) |
+| 3.12 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0) |
+| 3.11 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1) |
+| 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.10) |
+| 3.11 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0) |
+| 3.10 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1) |
+| 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.10) |
+| 3.10 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0) |
+
+</details>
+
+#### Flash-Attention 2.7.4.post1
+
+<details>
+<summary>Packages for Flash-Attention 2.7.4.post1</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+
+</details>
+
+#### Flash-Attention 2.7.3
+
+<details>
+<summary>Packages for Flash-Attention 2.7.3</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+| 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.4) |
+
+</details>
+
+#### Flash-Attention 2.7.2.post1
+
+<details>
+<summary>Packages for Flash-Attention 2.7.2.post1</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+| 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.3) |
+
+</details>
+
+#### Flash-Attention 2.7.0.post2
+
+<details>
+<summary>Packages for Flash-Attention 2.7.0.post2</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+
+</details>
+
+#### Flash-Attention 2.6.3
+
+<details>
+<summary>Packages for Flash-Attention 2.6.3</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
+| 3.12 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.12 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
+| 3.12 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.12 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release5](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
+| 3.11 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
+| 3.11 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.11 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release5](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.8.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.8.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.8.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
+| 3.10 | 2.7.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.7.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
+| 3.10 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.6.0 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.6.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.5.1 | 12.9.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.5.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14) |
+| 3.10 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.14), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release5](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release4](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5) |
+| 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+
+</details>
+
+#### Flash-Attention 2.5.9
+
+<details>
+<summary>Packages for Flash-Attention 2.5.9</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
+| 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.12 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
+| 3.12 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
+| 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
+| 3.11 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
+| 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
+| 3.10 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+
+</details>
+
+#### Flash-Attention 2.5.6
+
+<details>
+<summary>Packages for Flash-Attention 2.5.6</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+
+</details>
+
+#### Flash-Attention 2.4.3
+
+<details>
+<summary>Packages for Flash-Attention 2.4.3</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
+| 3.12 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.12 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
+| 3.12 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.12 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.12 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.12 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
+| 3.11 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
+| 3.11 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.11 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.11 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.11 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.8.0.dev20250523 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.1), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.2.0) |
+| 3.10 | 2.7.1 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.7.0 | 12.8.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.1.0), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.9) |
+| 3.10 | 2.7.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.7.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.7.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.6.0 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8) |
+| 3.10 | 2.5.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.5.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.5.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release3](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.4.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.8), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.3.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.3.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6) |
+| 3.10 | 2.2.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.6), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.2.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.1.2 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+
+</details>
 
 ### Windows x86_64
 
-| Flash-Attention | Python | PyTorch | CUDA | package |
-| --------------- | ------ | ------- | ---- | ------- |
-| 2.7.4 | 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.7.4 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.7.4 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.7.4 | 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.7.4 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.7.4 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.7.4 | 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.7.4 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.7.4 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.11 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.1) |
-| 2.6.3 | 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.6.3 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
-| 2.5.9 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+#### Flash-Attention 2.7.4
+
+<details>
+<summary>Packages for Flash-Attention 2.7.4</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+
+</details>
+
+#### Flash-Attention 2.6.3
+
+<details>
+<summary>Packages for Flash-Attention 2.6.3</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.6.0 | 12.6.3 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.1) |
+| 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+
+</details>
+
+#### Flash-Attention 2.5.9
+
+<details>
+<summary>Packages for Flash-Attention 2.5.9</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+
+</details>
 
 ## History
 

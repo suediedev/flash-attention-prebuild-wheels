@@ -185,11 +185,11 @@ def merge_duplicate_rows(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def generate_markdown_table_by_os(df: pd.DataFrame) -> str:
-    """Generate markdown tables grouped by OS."""
+    """Generate markdown tables grouped by OS and Flash-Attention version."""
     if df.empty:
         return ""
 
-    all_tables = []
+    all_sections = []
 
     # Group by OS and sort each group
     for os_name in sorted(df["OS"].unique()):
@@ -213,40 +213,77 @@ def generate_markdown_table_by_os(df: pd.DataFrame) -> str:
         os_df = os_df.sort_values(["fa_sort", "py_sort", "pt_sort", "cu_sort"])
         os_df = os_df.drop(columns=["fa_sort", "py_sort", "pt_sort", "cu_sort"])
 
-        # Create table for this OS
-        lines = [
-            f"## {os_name}",
-            "",
-            "| Flash-Attention | Python | PyTorch | CUDA | package |",
-            "| --------------- | ------ | ------- | ---- | ------- |",
-        ]
+        # Create OS section header
+        os_lines = [f"### {os_name}", ""]
 
-        for _, row in os_df.iterrows():
-            packages = row["package"]
+        # Group by Flash-Attention version within each OS
+        fa_versions = []
+        for fa_version in os_df["Flash-Attention"].unique():
+            fa_df = os_df[os_df["Flash-Attention"] == fa_version].copy()
 
-            # Handle case where packages is a list
-            if isinstance(packages, list):
-                if packages and any(pd.notna(pkg) and pkg for pkg in packages):
-                    # Create numbered release links
-                    package_links = []
-                    for i, pkg in enumerate(packages, 1):
-                        if pd.notna(pkg) and pkg:
-                            package_links.append(f"[Release{i}]({pkg})")
-                    package_cell = ", ".join(package_links)
+            # Re-sort by Python > PyTorch > CUDA within each Flash-Attention version
+            fa_df["py_sort"] = fa_df["Python"].apply(
+                lambda x: tuple(-v for v in parse_numeric_version(x))
+            )
+            fa_df["pt_sort"] = fa_df["PyTorch"].apply(
+                lambda x: tuple(-v for v in parse_numeric_version(x))
+            )
+            fa_df["cu_sort"] = fa_df["CUDA"].apply(
+                lambda x: tuple(-v for v in parse_numeric_version(x))
+            )
+            fa_df = fa_df.sort_values(["py_sort", "pt_sort", "cu_sort"])
+            fa_df = fa_df.drop(columns=["py_sort", "pt_sort", "cu_sort"])
+
+            # Create collapsible table for this Flash-Attention version
+            table_lines = [
+                "| Python | PyTorch | CUDA | package |",
+                "| ------ | ------- | ---- | ------- |",
+            ]
+
+            for _, row in fa_df.iterrows():
+                packages = row["package"]
+
+                # Handle case where packages is a list
+                if isinstance(packages, list):
+                    if packages and any(pd.notna(pkg) and pkg for pkg in packages):
+                        # Create numbered release links
+                        package_links = []
+                        for i, pkg in enumerate(packages, 1):
+                            if pd.notna(pkg) and pkg:
+                                package_links.append(f"[Release{i}]({pkg})")
+                        package_cell = ", ".join(package_links)
+                    else:
+                        package_cell = "-"
                 else:
-                    package_cell = "-"
-            else:
-                # Handle single package (backward compatibility)
-                package_cell = (
-                    f"[Release]({packages})" if pd.notna(packages) and packages else "-"
-                )
+                    # Handle single package (backward compatibility)
+                    package_cell = (
+                        f"[Release]({packages})"
+                        if pd.notna(packages) and packages
+                        else "-"
+                    )
 
-            line = f"| {row['Flash-Attention']} | {row['Python']} | {row['PyTorch']} | {row['CUDA']} | {package_cell} |"
-            lines.append(line)
+                line = f"| {row['Python']} | {row['PyTorch']} | {row['CUDA']} | {package_cell} |"
+                table_lines.append(line)
 
-        all_tables.append("\n".join(lines))
+            # Create collapsible section for this Flash-Attention version
+            fa_section = [
+                f"#### Flash-Attention {fa_version}",
+                "",
+                "<details>",
+                f"<summary>Packages for Flash-Attention {fa_version}</summary>",
+                "",
+                "\n".join(table_lines),
+                "",
+                "</details>",
+                "",
+            ]
 
-    return "\n\n".join(all_tables)
+            fa_versions.extend(fa_section)
+
+        os_lines.extend(fa_versions)
+        all_sections.extend(os_lines)
+
+    return "\n".join(all_sections)
 
 
 def generate_markdown_table(df: pd.DataFrame) -> str:
