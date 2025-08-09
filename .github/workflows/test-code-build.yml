@@ -64,7 +64,7 @@ jobs:
         timeout-minutes: 1200
         shell: pwsh
         env:
-          MAX_JOBS: 4
+          MAX_JOBS: 2
           NVCC_THREADS: 2
         run: |
           .\build_windows.ps1 -FlashAttnVersion "2.7.4" -PythonVersion "3.11" -TorchVersion "2.7.1" -CudaVersion "12.8.1"
