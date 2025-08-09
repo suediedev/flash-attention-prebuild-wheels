@@ -64,8 +64,8 @@ jobs:
         timeout-minutes: 1200
         shell: pwsh
         env:
-          MAX_JOBS: 2
-          NVCC_THREADS: 2
+          MAX_JOBS: 1
+          NVCC_THREADS: 1
         run: |
           .\build_windows.ps1 -FlashAttnVersion "2.7.4" -PythonVersion "3.11" -TorchVersion "2.7.1" -CudaVersion "12.8.1"
           $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
