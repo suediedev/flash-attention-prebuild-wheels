@@ -1,8 +1,5 @@
-#!/usr/bin/env python3
 """
-Generate a one-row-per-package Markdown table from the History section in README.md.
-
-This script uses pandas to simplify data processing and sorting.
+python generate_packages_table.py --update-readme
 """
 
 import argparse
@@ -10,14 +7,8 @@ import itertools
 import re
 import sys
 from pathlib import Path
-from typing import List, Optional
 
 import pandas as pd
-
-
-def read_text(file_path: Path) -> str:
-    with file_path.open("r", encoding="utf-8") as f:
-        return f.read()
 
 
 def parse_numeric_version(text: str) -> tuple:
@@ -26,7 +17,7 @@ def parse_numeric_version(text: str) -> tuple:
     return tuple(int(n) for n in nums)
 
 
-def extract_packages_from_history(text: str) -> List[dict]:
+def extract_packages_from_history(text: str) -> list[dict]:
     """Extract package information from History section."""
     lines = text.splitlines()
 
@@ -319,7 +310,46 @@ def generate_markdown_table(df: pd.DataFrame) -> str:
     return "\n".join(lines)
 
 
-def main(argv: Optional[List[str]] = None) -> int:
+def update_readme_packages_section(readme_path: Path, packages_markdown: str) -> None:
+    """Update the Packages section in README.md with new content."""
+    try:
+        with readme_path.open("r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Find the Packages section
+        packages_start = content.find("## Packages")
+        if packages_start == -1:
+            raise ValueError("Packages section not found in README.md")
+
+        # Find the end of Packages section (next ## section or History section)
+        packages_end = content.find("## History", packages_start)
+        if packages_end == -1:
+            # If no History section found, look for any other ## section
+            remaining_content = content[packages_start + len("## Packages") :]
+            next_section = remaining_content.find("\n## ")
+            if next_section != -1:
+                packages_end = packages_start + len("## Packages") + next_section
+            else:
+                packages_end = len(content)
+
+        # Replace the Packages section
+        new_content = (
+            content[:packages_start]
+            + "## Packages\n\n"
+            + packages_markdown
+            + "\n\n"
+            + content[packages_end:]
+        )
+
+        # Write back to file
+        with readme_path.open("w", encoding="utf-8") as f:
+            f.write(new_content)
+
+    except Exception as e:
+        raise RuntimeError(f"Failed to update README.md: {e}")
+
+
+def main() -> None:
     parser = argparse.ArgumentParser(
         description="Generate a one-row-per-package Markdown table from the History section of a README.md"
     )
@@ -330,37 +360,39 @@ def main(argv: Optional[List[str]] = None) -> int:
         default=Path("README.md"),
         help="Path to README.md (default: README.md)",
     )
-    args = parser.parse_args(argv)
+    parser.add_argument(
+        "--update-readme",
+        action="store_true",
+        help="Update the Packages section in README.md instead of printing to stdout",
+    )
+    args = parser.parse_args()
 
     try:
-        text = read_text(args.readme)
+        with args.readme.open("r", encoding="utf-8") as f:
+            text = f.read()
+
         packages = extract_packages_from_history(text)
 
         if not packages:
             print("No packages found in History section", file=sys.stderr)
-            return 1
+            return
 
         df = pd.DataFrame(packages)
         df_sorted = sort_packages(df)
         df_merged = merge_duplicate_rows(df_sorted)
         markdown = generate_markdown_table_by_os(df_merged)
 
-        try:
+        if args.update_readme:
+            # Update the README.md file
+            update_readme_packages_section(args.readme, markdown)
+            print(f"Updated Packages section in {args.readme}")
+        else:
+            # Print to stdout (original behavior)
             print(markdown)
-        except BrokenPipeError:
-            # Gracefully handle pipe interruption (e.g., | head)
-            try:
-                sys.stdout.close()
-            except Exception:
-                pass
-            return 0
-
-        return 0
 
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
-        return 1
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()
