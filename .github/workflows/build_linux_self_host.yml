@@ -2,7 +2,7 @@
 # Build wheels with self-hosted runner
 # #########################################################
 
-name: Build wheels and upload to GitHub Releases (Linux x86_64, self-hosted runner)
+name: "[Linux x86_64, self-hosted runner] Build wheels and upload to GitHub Releases"
 
 on:
   workflow_call:
@@ -105,8 +105,8 @@ jobs:
         id: build_wheels
         shell: bash
         env:
-          MAX_JOBS: 2
-          NVCC_THREADS: 2
+          MAX_JOBS: 3
+          NVCC_THREADS: 3
         run: |
           chmod +x build_linux.sh
           ./build_linux.sh ${{ inputs.flash-attn-version }} ${{ inputs.python-version }} ${{ inputs.torch-version }} ${{ inputs.cuda-version }}

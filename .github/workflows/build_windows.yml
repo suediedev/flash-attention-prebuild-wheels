@@ -2,7 +2,7 @@
 # Build wheels with GitHub hosted runner on Windows x86_64
 # #########################################################
 
-name: Build wheels and upload to GitHub Releases (Windows x86_64)
+name: "[Windows x86_64] Build wheels and upload to GitHub Releases"
 
 on:
   workflow_call:

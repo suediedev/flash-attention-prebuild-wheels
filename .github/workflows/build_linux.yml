@@ -2,7 +2,7 @@
 # Build wheels with GitHub hosted runner
 # #########################################################
 
-name: Build wheels and upload to GitHub Releases (Linux x86_64)
+name: "[Linux x86_64] Build wheels and upload to GitHub Releases"
 
 on:
   workflow_call:
