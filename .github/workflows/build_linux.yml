@@ -1,0 +1,107 @@
+# #########################################################
+# Build wheels with GitHub hosted runner
+# #########################################################
+
+name: Build wheels and upload to GitHub Releases (Linux x86_64)
+
+on:
+  workflow_call:
+    inputs:
+      flash-attn-version:
+        description: "Flash-Attention version"
+        required: true
+        type: string
+      python-version:
+        description: "Python version"
+        required: true
+        type: string
+      torch-version:
+        description: "PyTorch version"
+        required: true
+        type: string
+      cuda-version:
+        description: "CUDA version"
+        required: true
+        type: string
+    secrets:
+      GITHUB_TOKEN:
+        required: true
+
+jobs:
+  build_wheels:
+    name: Build wheels and Upload (Linux x86_64)
+    runs-on: ubuntu-22.04
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      TERM: xterm-256color
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Maximize build space
+        run: |
+          df -h
+          echo "-----------------------------"
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          df -h
+
+      - name: Set Swap Space
+        uses: pierotofy/set-swap-space@master
+        with:
+          swap-size-gb: 48
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python-version }}
+
+      - uses: Jimver/cuda-toolkit@master
+        with:
+          cuda: ${{ inputs.cuda-version }}
+          sub-packages: '["nvcc", "toolkit"]'
+          method: "network"
+          use-github-cache: false
+          use-local-cache: false
+
+      - name: Install build dependencies
+        run: |
+          sudo apt install -y ninja-build clang
+          pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
+
+      - name: Set environment variables
+        run: |
+          export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
+          export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+      - name: Build wheels
+        id: build_wheels
+        env:
+          MAX_JOBS: 2
+          NVCC_THREADS: 2
+        run: |
+          chmod +x build_linux.sh
+          ./build_linux.sh ${{ inputs.flash-attn-version }} ${{ inputs.python-version }} ${{ inputs.torch-version }} ${{ inputs.cuda-version }}
+          wheel_name=$(basename $(ls flash-attention/dist/*.whl | head -n 1))
+          echo "WHEEL_NAME=$wheel_name" >> $GITHUB_OUTPUT
+
+      - name: Install Test
+        run: |
+          pip install --no-cache-dir flash-attention/dist/${{ steps.build_wheels.outputs.WHEEL_NAME }}
+          python -c "import flash_attn; print(flash_attn.__version__)"
+
+      - name: Upload Release Asset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag_name=${{ github.ref_name }}
+          wheel_path="flash-attention/dist/${{ steps.build_wheels.outputs.WHEEL_NAME }}"
+
+          # Check if the file exists
+          if [ ! -f "$wheel_path" ]; then
+            echo "Error: Wheel file not found at $wheel_path"
+            exit 1
+          fi
+
+          # Upload the release asset using GitHub CLI
+          gh release upload "$tag_name" "$wheel_path" --clobber

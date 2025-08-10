@@ -1,0 +1,101 @@
+# #########################################################
+# Build wheels with GitHub hosted runner on Windows x86_64
+# #########################################################
+
+name: Build wheels and upload to GitHub Releases (Windows x86_64)
+
+on:
+  workflow_call:
+    inputs:
+      flash-attn-version:
+        description: "Flash-Attention version"
+        required: true
+        type: string
+      python-version:
+        description: "Python version"
+        required: true
+        type: string
+      torch-version:
+        description: "PyTorch version"
+        required: true
+        type: string
+      cuda-version:
+        description: "CUDA version"
+        required: true
+        type: string
+    secrets:
+      GITHUB_TOKEN:
+        required: true
+
+jobs:
+  build_windows_wheels:
+    name: Build wheels and Upload (Windows x86_64, GitHub hosted runner)
+    runs-on: windows-2022
+    timeout-minutes: 1000
+    env:
+      MAX_JOBS: 2
+      NVCC_THREADS: 2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Git long paths
+        shell: pwsh
+        run: git config --system core.longpaths true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python-version }}
+
+      - uses: Jimver/cuda-toolkit@v0.2.24
+        with:
+          cuda: ${{ inputs.cuda-version }}
+          method: "network"
+          use-github-cache: false
+          use-local-cache: false
+
+      - name: Install VS2022 BuildTools
+        shell: pwsh
+        run: |
+          choco install -y visualstudio2022buildtools `
+            --version=117.14.1 `
+            --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
+
+      - name: Install build dependencies
+        shell: pwsh
+        run: |
+          python -m pip install -U setuptools==75.8.0 wheel packaging psutil ninja
+
+      - name: Build wheels
+        shell: pwsh
+        run: |
+          .\build_windows.ps1 -FlashAttnVersion "${{ inputs.flash-attn-version }}" -PythonVersion "${{ inputs.python-version }}" -TorchVersion "${{ inputs.torch-version }}" -CudaVersion "${{ inputs.cuda-version }}"
+          $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
+          echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
+
+      - name: Install Test
+        shell: pwsh
+        run: |
+          pip install --no-cache-dir flash-attention/dist/$env:wheel_name
+          python -c "import flash_attn; print(flash_attn.__version__)"
+
+      - name: Upload Release Asset
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
+          $wheel_path = "flash-attention/dist/$env:wheel_name"
+
+          # Check if the file exists
+          if (-not (Test-Path $wheel_path)) {
+          $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
+          $wheel_path = "flash-attention/dist/$env:wheel_name"
+
+          # Check if the file exists
+          if (-not (Test-Path $wheel_path)) {
+            Write-Host "Error: Wheel file not found at $wheel_path"
+            exit 1
+          }
+
+          # Upload the release asset using GitHub CLI
+          gh release upload "$tag_name" "$wheel_path" --clobber

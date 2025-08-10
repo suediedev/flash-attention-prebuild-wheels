@@ -33,121 +33,119 @@ jobs:
   # #########################################################
   # Build wheels with GitHub hosted runner
   # #########################################################
-  # build_wheels:
-  #   name: Build wheels and Upload (Linux x86_64, GitHub hosted runner)
-  #   needs: create_releases
-  #   runs-on: ubuntu-22.04
-  #   env:
-  #     DEBIAN_FRONTEND: noninteractive
-  #     TERM: xterm-256color
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       flash-attn-version: ["2.6.3", "2.7.4", "2.8.2"]
-  #       python-version: ["3.10", "3.11", "3.12"]
-  #       torch-version: ["2.5.1", "2.6.0", "2.7.1", "2.8.0"]
-  #       # https://developer.nvidia.com/cuda-toolkit-archive
-  #       cuda-version: ["12.4.1", "12.8.1", "12.9.1"]
-  #       exclude:
-  #         # torch < 2.2 does not support Python 3.12
-  #         - python-version: "3.12"
-  #           torch-version: "2.0.1"
-  #         - python-version: "3.12"
-  #           torch-version: "2.1.2"
-  #         # torch 2.0.1 does not support CUDA 12.x
-  #         - torch-version: "2.0.1"
-  #           cuda-version: "12.1.1"
-  #         - torch-version: "2.0.1"
-  #           cuda-version: "12.4.1"
-  #         - torch-version: "2.0.1"
-  #           cuda-version: "12.6.3"
-  #         - torch-version: "2.0.1"
-  #           cuda-version: "12.8.1"
-  #         # torch 2.6.0 does not support CUDA 12.1
-  #         - torch-version: "2.6.0"
-  #           cuda-version: "12.1.1"
-  #         # torch 2.7.0 does not support CUDA 12.4
-  #         - torch-version: "2.7.0"
-  #           cuda-version: "12.4.1"
-  #         # torch < 2.8 does not support CUDA 12.9
-  #         - torch-version: "2.5.1"
-  #           cuda-version: "12.9.1"
-  #         - torch-version: "2.6.3"
-  #           cuda-version: "12.9.1"
-  #         - torch-version: "2.7.1"
-  #           cuda-version: "12.9.1"
-  #   steps:
-  #     - uses: actions/checkout@v4
+  build_wheels:
+    name: Build wheels and Upload (Linux x86_64, GitHub hosted runner)
+    needs: create_releases
+    runs-on: ubuntu-22.04
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      TERM: xterm-256color
+    strategy:
+      fail-fast: false
+      matrix:
+        flash-attn-version: ["2.6.3", "2.7.4", "2.8.2"]
+        python-version: ["3.10", "3.11", "3.12"]
+        torch-version: ["2.5.1", "2.6.0", "2.7.1", "2.8.0"]
+        # https://developer.nvidia.com/cuda-toolkit-archive
+        cuda-version: ["12.4.1", "12.8.1", "12.9.1"]
+        exclude:
+          # torch < 2.2 does not support Python 3.12
+          - python-version: "3.12"
+            torch-version: "2.0.1"
+          - python-version: "3.12"
+            torch-version: "2.1.2"
+          # torch 2.0.1 does not support CUDA 12.x
+          - torch-version: "2.0.1"
+            cuda-version: "12.1.1"
+          - torch-version: "2.0.1"
+            cuda-version: "12.4.1"
+          - torch-version: "2.0.1"
+            cuda-version: "12.6.3"
+          - torch-version: "2.0.1"
+            cuda-version: "12.8.1"
+          # torch 2.6.0 does not support CUDA 12.1
+          - torch-version: "2.6.0"
+            cuda-version: "12.1.1"
+          # torch 2.7.0 does not support CUDA 12.4
+          - torch-version: "2.7.0"
+            cuda-version: "12.4.1"
+          # torch < 2.8 does not support CUDA 12.9
+          - torch-version: "2.5.1"
+            cuda-version: "12.9.1"
+          - torch-version: "2.6.3"
+            cuda-version: "12.9.1"
+          - torch-version: "2.7.1"
+            cuda-version: "12.9.1"
+    steps:
+      - uses: actions/checkout@v4
 
-  #     - name: Maximize build space
-  #       run: |
-  #         df -h
-  #         echo "-----------------------------"
-  #         sudo rm -rf /usr/share/dotnet
-  #         sudo rm -rf /usr/local/lib/android
-  #         sudo rm -rf /opt/ghc
-  #         sudo rm -rf /opt/hostedtoolcache/CodeQL
-  #         df -h
+      - name: Maximize build space
+        run: |
+          df -h
+          echo "-----------------------------"
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          df -h
 
-  #     - name: Set Swap Space
-  #       uses: pierotofy/set-swap-space@master
-  #       with:
-  #         swap-size-gb: 48
+      - name: Set Swap Space
+        uses: pierotofy/set-swap-space@master
+        with:
+          swap-size-gb: 48
 
-  #     - uses: actions/setup-python@v5
-  #       with:
-  #         python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
 
-  #     - uses: Jimver/cuda-toolkit@master
-  #       with:
-  #         cuda: ${{ matrix.cuda-version }}
-  #         sub-packages: '["nvcc", "toolkit"]'
-  #         method: "network"
-  #         use-github-cache: false
-  #         use-local-cache: false
+      - uses: Jimver/cuda-toolkit@master
+        with:
+          cuda: ${{ matrix.cuda-version }}
+          sub-packages: '["nvcc", "toolkit"]'
+          method: "network"
+          use-github-cache: false
+          use-local-cache: false
 
-  #     - name: Install build dependencies
-  #       run: |
-  #         sudo apt install -y ninja-build clang
-  #         pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
+      - name: Install build dependencies
+        run: |
+          sudo apt install -y ninja-build clang
+          pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil
 
-  #     - name: Set environment variables
-  #       run: |
-  #         export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
-  #         export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+      - name: Set environment variables
+        run: |
+          export PATH=/usr/local/nvidia/bin:/usr/local/nvidia/lib64:$PATH
+          export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
-  #     - name: Build wheels
-  #       env:
-  #         MAX_JOBS: 2
-  #         NVCC_THREADS: 2
-  #       run: |
-  #         chmod +x build_linux.sh
-  #         ./build_linux.sh ${{ matrix.flash-attn-version }} ${{ matrix.python-version }} ${{ matrix.torch-version }} ${{ matrix.cuda-version }}
-  #         wheel_name=$(basename $(ls flash-attention/dist/*.whl | head -n 1))
-  #         echo "wheel_name=$wheel_name" >> $GITHUB_ENV
+      - name: Build wheels
+        env:
+          MAX_JOBS: 2
+          NVCC_THREADS: 2
+        run: |
+          chmod +x build_linux.sh
+          ./build_linux.sh ${{ matrix.flash-attn-version }} ${{ matrix.python-version }} ${{ matrix.torch-version }} ${{ matrix.cuda-version }}
+          wheel_name=$(basename $(ls flash-attention/dist/*.whl | head -n 1))
+          echo "wheel_name=$wheel_name" >> $GITHUB_ENV
 
-  #     - name: Install Test
-  #       run: |
-  #         pip install --no-cache-dir flash-attention/dist/${{ env.wheel_name }}
-  #         python -c "import flash_attn; print(flash_attn.__version__)"
+      - name: Install Test
+        run: |
+          pip install --no-cache-dir flash-attention/dist/${{ env.wheel_name }}
+          python -c "import flash_attn; print(flash_attn.__version__)"
 
-  #     - name: Upload Release Asset
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       run: |
-  #         tag_name=${{ github.ref_name }}
-  #         wheel_path="flash-attention/dist/${{ env.wheel_name }}"
+      - name: Upload Release Asset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag_name=${{ github.ref_name }}
+          wheel_path="flash-attention/dist/${{ env.wheel_name }}"
 
-  #         # Check if the file exists
-  #         if [ ! -f "$wheel_path" ]; then
-  #           echo "Error: Wheel file not found at $wheel_path"
-  #           exit 1
-  #         fi
+          # Check if the file exists
+          if [ ! -f "$wheel_path" ]; then
+            echo "Error: Wheel file not found at $wheel_path"
+            exit 1
+          fi
 
-  #         # Upload the release asset using GitHub CLI
-  #         gh release upload "$tag_name" "$wheel_path" --clobber
-
-  #         echo "Successfully uploaded $wheel_name to release $tag_name"
+          # Upload the release asset using GitHub CLI
+          gh release upload "$tag_name" "$wheel_path" --clobber
 
   # #########################################################
   # Build wheels with self-hosted runner
@@ -303,8 +301,6 @@ jobs:
           # Upload the release asset using GitHub CLI
           gh release upload "$tag_name" "$wheel_path" --clobber
 
-          echo "Successfully uploaded $wheel_name to release $tag_name"
-
       - name: Clean up
         shell: bash
         if: always()
@@ -422,5 +418,3 @@ jobs:
 
           # Upload the release asset using GitHub CLI
           gh release upload "$tag_name" "$wheel_path" --clobber
-
-          Write-Host "Successfully uploaded $env:wheel_name to release $tag_name"
