@@ -23,9 +23,6 @@ on:
         description: "CUDA version"
         required: true
         type: string
-    secrets:
-      GITHUB_TOKEN:
-        required: true
 
 jobs:
   build_wheels:

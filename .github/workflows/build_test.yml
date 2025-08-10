@@ -7,9 +7,8 @@ jobs:
   # #########################################################
   # Build wheels with GitHub hosted runner
   # #########################################################
-  build_wheels:
-    name: Build Root
-    runs-on: ubuntu-latest
+  build_wheels_linux:
+    name: Build Linux
     strategy:
       fail-fast: false
       matrix:
@@ -18,18 +17,16 @@ jobs:
         torch-version: ["2.5.1"]
         # https://developer.nvidia.com/cuda-toolkit-archive
         cuda-version: ["12.4.1"]
-    steps:
-      - uses: actions/checkout@v4
+    uses: ./.github/workflows/build_linux.yml
+    with:
+      flash-attn-version: ${{ matrix.flash-attn-version }}
+      python-version: ${{ matrix.python-version }}
+      torch-version: ${{ matrix.torch-version }}
+      cuda-version: ${{ matrix.cuda-version }}
+    secrets: inherit
 
-      - uses: ./.github/workflows/build_linux.yml
-        with:
-          flash-attn-version: ${{ matrix.flash-attn-version }}
-          python-version: ${{ matrix.python-version }}
-          torch-version: ${{ matrix.torch-version }}
-          cuda-version: ${{ matrix.cuda-version }}
   build_wheels_windows:
-    name: Build Root
-    runs-on: ubuntu-latest
+    name: Build Windows
     strategy:
       fail-fast: false
       matrix:
@@ -38,12 +35,10 @@ jobs:
         torch-version: ["2.5.1"]
         # https://developer.nvidia.com/cuda-toolkit-archive
         cuda-version: ["12.4.1"]
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: ./.github/workflows/build_windows.yml
-        with:
-          flash-attn-version: ${{ matrix.flash-attn-version }}
-          python-version: ${{ matrix.python-version }}
-          torch-version: ${{ matrix.torch-version }}
-          cuda-version: ${{ matrix.cuda-version }}
+    uses: ./.github/workflows/build_windows.yml
+    with:
+      flash-attn-version: ${{ matrix.flash-attn-version }}
+      python-version: ${{ matrix.python-version }}
+      torch-version: ${{ matrix.torch-version }}
+      cuda-version: ${{ matrix.cuda-version }}
+    secrets: inherit
