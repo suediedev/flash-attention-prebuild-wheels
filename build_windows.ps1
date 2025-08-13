@@ -63,6 +63,8 @@ if (-not $env:MAX_JOBS) { $env:MAX_JOBS = "2" }
 if (-not $env:NVCC_THREADS) { $env:NVCC_THREADS = "2" }
 $env:FLASH_ATTENTION_FORCE_BUILD = "TRUE"
 $env:NVCC_FLAGS = "-w --disable-warnings"
+$env:CXXFLAGS = "/w"
+$env:CFLAGS = "/w"
 
 cd flash-attention
 python setup.py bdist_wheel --dist-dir=dist
