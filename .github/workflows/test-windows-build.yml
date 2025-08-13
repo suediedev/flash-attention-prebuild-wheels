@@ -5,10 +5,7 @@ on:
 jobs:
   build_windows_wheels:
     name: Build wheels and Upload (Windows x86_64, GitHub hosted runner)
-    runs-on: windows-latest
-    env:
-      MAX_JOBS: 2
-      NVCC_THREADS: 2
+    runs-on: windows-2022
     strategy:
       fail-fast: false
       matrix:
@@ -33,23 +30,37 @@ jobs:
           use-github-cache: false
           use-local-cache: false
 
-      - name: Install VS2022 BuildTools
+      - name: Install Visual Studio BuildTools (C++/CMake + Windows SDK)
         shell: pwsh
         run: |
-          choco install -y visualstudio2022buildtools `
-            --version=117.14.1 `
-            --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
-          choco install -y windows-sdk-10.1 visualstudio2022-workload-vctools
+          choco upgrade -y visualstudio2022buildtools `
+            --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
+                          --add Microsoft.VisualStudio.Component.VC.CMake.Project `
+                          --add Microsoft.VisualStudio.Component.Windows11SDK.22621 `
+                          --includeRecommended --includeOptional"
+
+      - name: Setup MSVC Developer Command Prompt
+        uses: TheMrMilchmann/setup-msvc-dev@v3
+        with:
+          arch: x64
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v2
 
       - name: Install build dependencies
         shell: pwsh
         run: |
-          pip install -U pip setuptools==75.8.0 wheel setuptools packaging psutil ninja
+          pip install -U pip setuptools==75.8.0 wheel packaging psutil ninja
 
       - name: Build wheels
         shell: pwsh
+        env:
+          MAX_JOBS: 2
+          NVCC_THREADS: 2
         run: |
           .\build_windows.ps1 -FlashAttnVersion "${{ matrix.flash-attn-version }}" -PythonVersion "${{ matrix.python-version }}" -TorchVersion "${{ matrix.torch-version }}" -CudaVersion "${{ matrix.cuda-version }}"
+          ls
+          dir flash-attention\dist
           $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
           echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
 
