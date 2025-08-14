@@ -31,7 +31,7 @@ jobs:
     # Large Instance
     env:
       MAX_JOBS: 4
-      NVCC_THREADS: 3
+      NVCC_THREADS: 2
     steps:
       - uses: actions/checkout@v4
 
