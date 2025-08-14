@@ -54,7 +54,7 @@ jobs:
           MAX_JOBS: 4
           NVCC_THREADS: 3
         run: |
-          .\build_windows.ps1 -FlashAttnVersion "2.7.4" -PythonVersion "3.11" -TorchVersion "2.7.1" -CudaVersion "12.8.1"
+          .\build_windows.ps1 -FlashAttnVersion "2.5.9" -PythonVersion "3.11" -TorchVersion "2.4.1" -CudaVersion "12.4.1"
           $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
           echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
 

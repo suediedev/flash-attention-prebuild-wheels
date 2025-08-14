@@ -72,3 +72,4 @@ $baseWheelName = Get-ChildItem -Path "dist\*.whl" | Select-Object -First 1 | For
 $wheelName = $baseWheelName.Replace($FlashAttnVersion, "$FlashAttnVersion+cu$MatrixCudaVersion" + "torch$MatrixTorchVersion")
 Move-Item "dist\$baseWheelName" "dist\$wheelName"
 Write-Host "Built wheel: $wheelName"
+cd ..

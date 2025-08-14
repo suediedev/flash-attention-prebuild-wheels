@@ -1,9 +1,8 @@
 # #########################################################
-# Build wheels with GitHub hosted runner on Windows x86_64
+# Build wheels with AWS CodeBuild on Windows x86_64
 # #########################################################
 
-name: "[Windows x86_64] Build wheels and upload to GitHub Releases"
-
+name: "[Windows x86_64, AWS CodeBuild] Build wheels and upload to GitHub Releases"
 on:
   workflow_call:
     inputs:
@@ -25,12 +24,14 @@ on:
         type: string
 
 jobs:
-  build_windows_wheels:
-    name: Build wheels and Upload (Windows x86_64, GitHub hosted runner, ${{ inputs.flash-attn-version }}, ${{ inputs.python-version }}, ${{ inputs.torch-version }}, ${{ inputs.cuda-version }})
-    runs-on: windows-2022
+  build_wheels:
+    name: Build wheels and Upload (Windows x86_64, AWS CodeBuild, ${{ inputs.flash-attn-version }}, ${{ inputs.python-version }}, ${{ inputs.torch-version }}, ${{ inputs.cuda-version }})
+    timeout-minutes: 129600
+    runs-on: codebuild-flash-attention-pre-build-wheel-windows-${{ github.run_id }}-${{ github.run_attempt }}
+    # Large Instance
     env:
-      MAX_JOBS: 2
-      NVCC_THREADS: 2
+      MAX_JOBS: 4
+      NVCC_THREADS: 3
     steps:
       - uses: actions/checkout@v4
 
@@ -54,9 +55,9 @@ jobs:
         run: |
           choco upgrade -y visualstudio2022buildtools `
             --params "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
-                          --add Microsoft.VisualStudio.Component.VC.CMake.Project `
-                          --add Microsoft.VisualStudio.Component.Windows11SDK.22621 `
-                          --includeRecommended --includeOptional"
+                         --add Microsoft.VisualStudio.Component.VC.CMake.Project `
+                         --add Microsoft.VisualStudio.Component.Windows11SDK.22621 `
+                         --includeRecommended --includeOptional"
 
       - name: Setup MSVC Developer Command Prompt
         uses: TheMrMilchmann/setup-msvc-dev@v3
@@ -69,7 +70,7 @@ jobs:
       - name: Install build dependencies
         shell: pwsh
         run: |
-          python -m pip install -U setuptools==75.8.0 wheel packaging psutil ninja
+          pip install -U pip setuptools==75.8.0 wheel packaging psutil numpy ninja
 
       - name: Build wheels
         shell: pwsh
