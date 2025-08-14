@@ -65,9 +65,9 @@ Write-Host "Environment variables:"
 Write-Host "  MAX_JOBS: $env:MAX_JOBS"
 Write-Host "  NVCC_THREADS: $env:NVCC_THREADS"
 $env:FLASH_ATTENTION_FORCE_BUILD = "TRUE"
-$env:NVCC_FLAGS = "-w --disable-warnings"
-$env:CXXFLAGS = "/w"
-$env:CFLAGS = "/w"
+$env:NVCC_FLAGS = "-w --disable-warnings -diag-suppress=all_warnings"
+$env:CXXFLAGS = "/w /wd9025"
+$env:CFLAGS = "/w /wd9025"
 
 cd flash-attention
 python setup.py bdist_wheel --dist-dir=dist
