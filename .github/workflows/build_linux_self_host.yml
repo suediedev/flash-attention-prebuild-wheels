@@ -36,7 +36,7 @@ jobs:
     env:
       DEBIAN_FRONTEND: noninteractive
       TERM: xterm-256color
-    timeout-minutes: 10000
+    timeout-minutes: 2160
     steps:
       - name: Install tools
         shell: bash
@@ -101,7 +101,7 @@ jobs:
           export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
       - name: Build wheels
-        timeout-minutes: 10000
+        timeout-minutes: 2160
         id: build_wheels
         shell: bash
         env:

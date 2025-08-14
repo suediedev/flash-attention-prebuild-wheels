@@ -26,7 +26,7 @@ on:
 jobs:
   build_wheels:
     name: Build wheels and Upload (Windows x86_64, AWS CodeBuild, ${{ inputs.flash-attn-version }}, ${{ inputs.python-version }}, ${{ inputs.torch-version }}, ${{ inputs.cuda-version }})
-    timeout-minutes: 129600
+    timeout-minutes: 2160
     runs-on: codebuild-flash-attention-pre-build-wheel-windows-${{ github.run_id }}-${{ github.run_attempt }}
     # Large Instance
     env:
@@ -74,7 +74,7 @@ jobs:
 
       - name: Build wheels
         shell: pwsh
-        timeout-minutes: 129600
+        timeout-minutes: 2160
         run: |
           .\build_windows.ps1 -FlashAttnVersion "${{ inputs.flash-attn-version }}" -PythonVersion "${{ inputs.python-version }}" -TorchVersion "${{ inputs.torch-version }}" -CudaVersion "${{ inputs.cuda-version }}"
           $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
