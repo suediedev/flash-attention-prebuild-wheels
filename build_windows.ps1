@@ -61,6 +61,9 @@ $env:BUILD_TARGET = "cuda"
 # Use environment variables from workflow if available, otherwise use defaults
 if (-not $env:MAX_JOBS) { $env:MAX_JOBS = "2" }
 if (-not $env:NVCC_THREADS) { $env:NVCC_THREADS = "2" }
+Write-Host "Environment variables:"
+Write-Host "  MAX_JOBS: $env:MAX_JOBS"
+Write-Host "  NVCC_THREADS: $env:NVCC_THREADS"
 $env:FLASH_ATTENTION_FORCE_BUILD = "TRUE"
 $env:NVCC_FLAGS = "-w --disable-warnings"
 $env:CXXFLAGS = "/w"

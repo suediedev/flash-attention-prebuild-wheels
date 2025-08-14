@@ -76,6 +76,12 @@ jobs:
           MAX_JOBS: 6
           NVCC_THREADS: 4
         run: |
+          $env:MAX_JOBS = "${{ env.MAX_JOBS }}"
+          $env:NVCC_THREADS = "${{ env.NVCC_THREADS }}"
+          $env:FLASH_ATTENTION_FORCE_BUILD = "TRUE"
+          $env:NVCC_FLAGS = "-w --disable-warnings"
+          $env:CXXFLAGS = "/w"
+          $env:CFLAGS = "/w"
           .\build_windows.ps1 -FlashAttnVersion "${{ inputs.flash-attn-version }}" -PythonVersion "${{ inputs.python-version }}" -TorchVersion "${{ inputs.torch-version }}" -CudaVersion "${{ inputs.cuda-version }}"
           $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
           echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
