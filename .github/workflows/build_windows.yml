@@ -28,6 +28,9 @@ jobs:
   build_windows_wheels:
     name: Build wheels and Upload (Windows x86_64, GitHub hosted runner, ${{ inputs.flash-attn-version }}, ${{ inputs.python-version }}, ${{ inputs.torch-version }}, ${{ inputs.cuda-version }})
     runs-on: windows-2022
+    env:
+      MAX_JOBS: 2
+      NVCC_THREADS: 2
     steps:
       - uses: actions/checkout@v4
 
@@ -70,16 +73,7 @@ jobs:
 
       - name: Build wheels
         shell: pwsh
-        env:
-          MAX_JOBS: 2
-          NVCC_THREADS: 2
         run: |
-          $env:MAX_JOBS = "${{ env.MAX_JOBS }}"
-          $env:NVCC_THREADS = "${{ env.NVCC_THREADS }}"
-          $env:FLASH_ATTENTION_FORCE_BUILD = "TRUE"
-          $env:NVCC_FLAGS = "-w --disable-warnings"
-          $env:CXXFLAGS = "/w"
-          $env:CFLAGS = "/w"
           .\build_windows.ps1 -FlashAttnVersion "${{ inputs.flash-attn-version }}" -PythonVersion "${{ inputs.python-version }}" -TorchVersion "${{ inputs.torch-version }}" -CudaVersion "${{ inputs.cuda-version }}"
           $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
           echo "wheel_name=$wheelName" >> $env:GITHUB_ENV

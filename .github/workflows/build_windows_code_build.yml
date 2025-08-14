@@ -28,6 +28,10 @@ jobs:
     name: Build wheels and Upload (Windows x86_64, AWS CodeBuild, ${{ inputs.flash-attn-version }}, ${{ inputs.python-version }}, ${{ inputs.torch-version }}, ${{ inputs.cuda-version }})
     timeout-minutes: 129600
     runs-on: codebuild-flash-attention-pre-build-wheel-windows-${{ github.run_id }}-${{ github.run_attempt }}
+    # Large Instance
+    env:
+      MAX_JOBS: 4
+      NVCC_THREADS: 3
     steps:
       - uses: actions/checkout@v4
 
@@ -71,17 +75,7 @@ jobs:
       - name: Build wheels
         shell: pwsh
         timeout-minutes: 129600
-        # Large Instance
-        env:
-          MAX_JOBS: 6
-          NVCC_THREADS: 4
         run: |
-          $env:MAX_JOBS = "${{ env.MAX_JOBS }}"
-          $env:NVCC_THREADS = "${{ env.NVCC_THREADS }}"
-          $env:FLASH_ATTENTION_FORCE_BUILD = "TRUE"
-          $env:NVCC_FLAGS = "-w --disable-warnings"
-          $env:CXXFLAGS = "/w"
-          $env:CFLAGS = "/w"
           .\build_windows.ps1 -FlashAttnVersion "${{ inputs.flash-attn-version }}" -PythonVersion "${{ inputs.python-version }}" -TorchVersion "${{ inputs.torch-version }}" -CudaVersion "${{ inputs.cuda-version }}"
           $wheelName = Get-ChildItem -Path "flash-attention\dist\*.whl" | Select-Object -First 1 | ForEach-Object { $_.Name }
           echo "wheel_name=$wheelName" >> $env:GITHUB_ENV
