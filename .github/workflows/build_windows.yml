@@ -91,17 +91,4 @@ jobs:
         run: |
           $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
           $wheel_path = "flash-attention/dist/$env:wheel_name"
-
-          # Check if the file exists
-          if (-not (Test-Path $wheel_path)) {
-          $tag_name = "${env:GITHUB_REF}".Replace("refs/tags/", "")
-          $wheel_path = "flash-attention/dist/$env:wheel_name"
-
-          # Check if the file exists
-          if (-not (Test-Path $wheel_path)) {
-            Write-Host "Error: Wheel file not found at $wheel_path"
-            exit 1
-          }
-
-          # Upload the release asset using GitHub CLI
           gh release upload "$tag_name" "$wheel_path" --clobber
