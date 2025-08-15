@@ -77,6 +77,11 @@ def generate_release_notes_from_assets(assets_info: dict):
         platform_name = platform_name[:1].upper() + platform_name[1:]
         platform_name = platform_name.replace("_", " ", 1)
 
+        if "Win" in platform_name:
+            platform_name = platform_name.replace("Win", "Windows")
+        if "amd64" in platform_name:
+            platform_name = platform_name.replace("amd64", "x86_64")
+
         notes.append(f"## {platform_name}")
         notes.append("")
         notes.append("| Flash-Attention | Python | PyTorch | CUDA |")
