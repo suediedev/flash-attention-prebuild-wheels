@@ -841,6 +841,22 @@ pip install ./flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 
 ### Windows x86_64
 
+#### Flash-Attention 2.8.2
+
+<details>
+<summary>Packages for Flash-Attention 2.8.2</summary>
+
+| Python | PyTorch | CUDA | package |
+| ------ | ------- | ---- | ------- |
+| 3.12 | 2.8 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
+| 3.12 | 2.7 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
+| 3.11 | 2.8 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
+| 3.11 | 2.7 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
+| 3.10 | 2.8 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
+| 3.10 | 2.7 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
+
+</details>
+
 #### Flash-Attention 2.7.4
 
 <details>
@@ -848,12 +864,18 @@ pip install ./flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 
 | Python | PyTorch | CUDA | package |
 | ------ | ------- | ---- | ------- |
+| 3.12 | 2.8 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
+| 3.12 | 2.7 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
 | 3.12 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
 | 3.12 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
 | 3.12 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.11 | 2.8 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
+| 3.11 | 2.7 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.9) |
 | 3.11 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
 | 3.11 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
 | 3.11 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
+| 3.10 | 2.8 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
+| 3.10 | 2.7 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10) |
 | 3.10 | 2.6.0 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
 | 3.10 | 2.5.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
@@ -900,6 +922,26 @@ pip install ./flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 </details>
 
 ## History
+
+### v0.4.10
+
+[Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.10)
+
+#### Windows x86_64
+
+| Flash-Attention | Python | PyTorch | CUDA |
+| --- | --- | --- | --- |
+| 2.7.4, 2.8.2 | 3.10, 3.11, 3.12 | 2.7, 2.8 | 12.8 |
+
+### v0.4.9
+
+[Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.9)
+
+#### Windows x86_64
+
+| Flash-Attention | Python | PyTorch | CUDA |
+| --- | --- | --- | --- |
+| 2.7.4 | 3.11 | 2.7 | 12.8 |
 
 ### v0.3.18
 
