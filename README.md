@@ -8,7 +8,7 @@ I also build and provide combinations of CUDA and PyTorch that are not officiall
 The building Github Actions Workflow can be found [here](./.github/workflows/build.yml).  
 The built packages are available on the [release page](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases).
 
-This repository uses a self-hosted runner for building the wheels. If you find this project helpful, please consider supporting or sponsoring to help maintain the infrastructure!
+**This repository uses a self-hosted runner and AWS CodeBuild for building the wheels. If you find this project helpful, please consider sponsoring to help maintain the infrastructure!**
 
 [![fund](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/mjun0812)
 
@@ -898,7 +898,6 @@ pip install ./flash_attn-2.6.3+cu124torch2.5-cp312-cp312-linux_x86_64.whl
 | 3.10 | 2.4.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.3.9) |
 
 </details>
-
 
 ## History
 
