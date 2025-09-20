@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -218,8 +221,10 @@ jobs:
   update_release_notes:
     name: Update Release Notes
     needs:
-    #   [build_wheels_linux, build_wheels_linux_self_hosted, build_wheels_windows]
+      #   [build_wheels_linux, build_wheels_linux_self_hosted, build_wheels_windows]
       [build_wheels_linux, build_wheels_windows]
+    permissions:
+      contents: write
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -229,6 +234,9 @@ jobs:
         with:
           python-version: 3.12
 
+      - name: Install dependencies
+        run: pip install pandas
+
       - name: Generate Release Notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -236,3 +244,24 @@ jobs:
           gh release view "${{ github.ref_name }}" --json assets > /tmp/assets.json
           python create_release_note.py /tmp/assets.json > /tmp/release_notes.md
           gh release edit "${{ github.ref_name }}" --notes-file /tmp/release_notes.md
+
+      - name: Update README history and packages
+        run: |
+          cat /tmp/release_notes.md | python insert_history.py \
+            --notes - \
+            --tag "${{ github.ref_name }}" \
+            --repo "${{ github.repository }}"
+          python generate_packages_table.py --update-readme
+
+      - name: Commit and push README updates
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "No README updates to commit."
+            exit 0
+          fi
+          git commit -am "docs: update README for ${{ github.ref_name }}"
+          git push origin HEAD:"${DEFAULT_BRANCH}"
