@@ -178,6 +178,14 @@ docker compose up -d
 | 3.10 | 2.5 | 12.8 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.11) |
 | 3.10 | 2.5 | 12.6 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.11) |
 | 3.10 | 2.5 | 12.4 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.11) |
+| 3.9 | 2.8 | 12.6 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.8 | 12.4 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.7 | 12.6 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.7 | 12.4 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.6 | 12.6 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.6 | 12.4 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.5 | 12.6 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.5 | 12.4 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
 
 </details>
 
@@ -733,6 +741,14 @@ docker compose up -d
 | 3.10 | 2.0.1 | 12.4.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.5), [Release2](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
 | 3.10 | 2.0.1 | 12.1.1 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
 | 3.10 | 2.0.1 | 11.8.0 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.0.2) |
+| 3.9 | 2.8 | 12.6 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.8 | 12.4 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.7 | 12.6 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.7 | 12.4 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.6 | 12.6 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.6 | 12.4 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.5 | 12.6 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
+| 3.9 | 2.5 | 12.4 | [Release1](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16) |
 
 </details>
 
@@ -1073,6 +1089,17 @@ docker compose up -d
 
 
 ## History
+
+### v0.4.16
+
+[Release](https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/tag/v0.4.16)
+
+#### Linux x86_64
+
+| Flash-Attention | Python | PyTorch | CUDA |
+| --- | --- | --- | --- |
+| 2.6.3, 2.8.3 | 3.9 | 2.5, 2.6, 2.7, 2.8 | 12.4, 12.6 |
+
 
 ### v0.4.15
 
