@@ -47,10 +47,10 @@ jobs:
         # https://developer.nvidia.com/cuda-toolkit-archive
         cuda-version: 
           # - "12.4.1"
-          - "12.6.3"
-          - "12.8.1"
+          # - "12.6.3"
+          # - "12.8.1"
           # - "12.9.1"
-          - "13.0.2"
+          - "13.0.1"
         exclude:
           # torch < 2.2 does not support Python 3.12
           - python-version: "3.12"
