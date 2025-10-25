@@ -82,8 +82,8 @@ jobs:
           # flash-attn 2.7.4 does not build in GitHub Hosted Runner
           - flash-attn-version: "2.7.4"
           # torch >= 2.9 does not support Python 3.9
-          - torch-version: "2.9.0"
-            python-version: "3.9"
+        #  - torch-version: "2.9.0"
+          #  python-version: "3.9"
     uses: ./.github/workflows/build_linux.yml
     with:
       flash-attn-version: ${{ matrix.flash-attn-version }}
